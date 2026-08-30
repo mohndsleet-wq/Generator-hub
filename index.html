@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generator Hub | عالم المولدات</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; font-family: Arial, sans-serif; color: #122033;
+      background: #f4f7fb; line-height: 1.7;
+    }
+    header {
+      background: linear-gradient(135deg, #092a4b, #0a6b78);
+      color: white; padding: 70px 20px; text-align: center;
+    }
+    header h1 { margin: 0; font-size: 44px; }
+    header p { font-size: 19px; margin: 12px 0 0; color: #d5f6f7; }
+    main { max-width: 1100px; margin: auto; padding: 35px 20px 60px; }
+    h2 { color: #09395c; margin-top: 35px; }
+    .grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+    }
+    .card {
+      background: white; border-radius: 14px; padding: 22px;
+      box-shadow: 0 5px 18px rgba(0,0,0,.08); border-top: 5px solid #0a7582;
+    }
+    .card h3 { margin-top: 0; color: #09395c; }
+    details {
+      background: white; margin: 12px 0; padding: 16px 20px;
+      border-radius: 10px; box-shadow: 0 3px 12px rgba(0,0,0,.06);
+    }
+    summary { cursor: pointer; font-weight: bold; color: #09395c; }
+    .term {
+      background: #e5f6f6; padding: 15px; border-right: 5px solid #0a7582;
+      margin: 10px 0; border-radius: 7px;
+    }
+    footer { text-align: center; padding: 25px; color: #6b7280; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Generator Hub</h1>
+    <p>منصة عربية مبسطة لتعلم كل ما يخص مولدات الديزل</p>
+  </header>
+
+  <main>
+    <h2>أجزاء المولد الرئيسية</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>المحرك Engine</h3>
+        <p>يحوّل طاقة الديزل إلى حركة ميكانيكية لتدوير المولد الكهربائي.</p>
+      </div>
+      <div class="card">
+        <h3>المولد Alternator</h3>
+        <p>يحوّل حركة المحرك إلى كهرباء AC لتغذية الأحمال.</p>
+      </div>
+      <div class="card">
+        <h3>الرادييتر Radiator</h3>
+        <p>يبرد سائل المحرك ويحافظ على درجة حرارته ضمن المستوى الآمن.</p>
+      </div>
+      <div class="card">
+        <h3>البطاريات Battery</h3>
+        <p>توفر الطاقة اللازمة لتدوير السلف وتشغيل المحرك.</p>
+      </div>
+    </div>
+
+    <h2>مصطلحات مهمة</h2>
+    <div class="term"><strong>kVA:</strong> قدرة المولد الظاهرية.</div>
+    <div class="term"><strong>ATS:</strong> لوحة التحويل الأوتوماتيكي بين الكهرباء الرئيسية والمولد.</div>
+    <div class="term"><strong>CCA:</strong> قدرة البطارية على إعطاء تيار تشغيل قوي في الجو البارد.</div>
+    <div class="term"><strong>CRS:</strong> جدول الرد على ملاحظات الاستشاري.</div>
+
+    <h2>أسئلة وأجوبة</h2>
+    <details>
+      <summary>ما هو الفرق بين Standby و Prime Power؟</summary>
+      <p>Standby للطوارئ عند انقطاع الكهرباء، أما Prime فهو للتشغيل المستمر أو لفترات طويلة.</p>
+    </details>
+    <details>
+      <summary>كيف نحسب سعة خزان الوقود؟</summary>
+      <p>استهلاك الوقود عند الحمل المطلوب (لتر/ساعة) × عدد ساعات التشغيل، ثم نضيف هامش أمان.</p>
+    </details>
+    <details>
+      <summary>ما هو الـSilencer؟</summary>
+      <p>كاتم صوت العادم، وظيفته تقليل ضوضاء العادم الخارج من المحرك.</p>
+    </details>
+  </main>
+
+  <footer>© 2026 Generator Hub</footer>
+</body>
+</html>
