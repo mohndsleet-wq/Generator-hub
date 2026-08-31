@@ -1,95 +1,1117 @@
-<!-- =========================
-     NAVBAR
-========================= -->
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
 
-<nav class="navbar">
+<head>
 
-  <ul class="nav-links">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <li>
-      <a href="index.html">HOME</a>
-    </li>
+  <title>Cooling System | عالم المولدات</title>
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #122033;
+      background: #f4f7fb;
+      line-height: 1.8;
+    }
 
 
-    <!-- SYSTEMS DROPDOWN -->
+    /* =========================
+       NAVBAR
+    ========================== */
 
-    <li class="dropdown">
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 9999;
 
-      <a href="#" class="dropbtn active">
-        SYSTEMS ▾
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      min-height: 62px;
+      padding: 0 30px;
+
+      background: #0d0d0d;
+      border-bottom: 3px solid #e31b23;
+
+      box-shadow: 0 4px 15px rgba(0,0,0,.25);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      gap: 8px;
+
+      direction: ltr;
+    }
+
+    .nav-links li {
+      position: relative;
+      margin: 0;
+    }
+
+    .nav-links a {
+      display: block;
+
+      padding: 18px 16px;
+
+      color: white;
+      text-decoration: none;
+
+      font-size: 14px;
+      font-weight: bold;
+
+      letter-spacing: .5px;
+
+      transition: .25s;
+    }
+
+    .nav-links > li > a:hover {
+      color: #ff3434;
+      background: rgba(255,255,255,.05);
+    }
+
+
+    /* =========================
+       DROPDOWN
+    ========================== */
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+
+      position: absolute;
+
+      top: 100%;
+      left: 0;
+
+      min-width: 240px;
+
+      background: #111;
+
+      border-top: 3px solid #e31b23;
+
+      box-shadow: 0 8px 20px rgba(0,0,0,.30);
+
+      z-index: 9999;
+    }
+
+    .dropdown-content a {
+      display: block;
+
+      padding: 12px 18px;
+
+      color: white;
+      text-decoration: none;
+
+      text-align: left;
+
+      white-space: nowrap;
+
+      font-size: 14px;
+
+      border-bottom: 1px solid #292929;
+
+      transition: .25s;
+    }
+
+    .dropdown-content a:hover {
+      background: #e31b23;
+      color: white;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .current-system {
+      background: #8b0000;
+      color: white !important;
+    }
+
+    .systems-active {
+      color: #ff3434 !important;
+    }
+
+
+    /* =========================
+       HEADER
+    ========================== */
+
+    header {
+      position: relative;
+
+      background:
+      linear-gradient(135deg, #7a0000, #e31b23);
+
+      color: white;
+
+      min-height: 250px;
+
+      padding: 65px 270px;
+
+      text-align: center;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    header h1 {
+      margin: 0;
+
+      font-size: 44px;
+
+      letter-spacing: 2px;
+    }
+
+    header p {
+      margin: 8px 0 0;
+
+      font-size: 19px;
+
+      color: #f5dddd;
+    }
+
+
+    /* =========================
+       LOGOS
+    ========================== */
+
+    .logo-left {
+      position: absolute;
+
+      top: 25px;
+      left: 40px;
+
+      width: 220px;
+      height: 180px;
+
+      object-fit: contain;
+    }
+
+    .logo-right {
+      position: absolute;
+
+      top: 25px;
+      right: 40px;
+
+      width: 220px;
+      height: 180px;
+
+      object-fit: contain;
+    }
+
+
+    /* =========================
+       MAIN
+    ========================== */
+
+    main {
+      max-width: 1120px;
+
+      margin: auto;
+
+      padding: 45px 20px 70px;
+    }
+
+
+    /* =========================
+       INTRODUCTION
+    ========================== */
+
+    .intro {
+      background: white;
+
+      border-radius: 15px;
+
+      padding: 30px;
+
+      border-right: 6px solid #e31b23;
+
+      box-shadow: 0 5px 18px rgba(0,0,0,.08);
+
+      margin-bottom: 35px;
+    }
+
+    .intro h2 {
+      margin-top: 0;
+
+      color: #8b0000;
+    }
+
+
+    /* =========================
+       SECTION TITLE
+    ========================== */
+
+    .section-title {
+      margin-top: 40px;
+      margin-bottom: 18px;
+
+      color: #09395c;
+
+      font-size: 27px;
+
+      border-bottom: 2px solid #ddd;
+
+      padding-bottom: 8px;
+    }
+
+
+    /* =========================
+       COOLING FLOW
+    ========================== */
+
+    .cooling-flow {
+      background: #111;
+
+      color: white;
+
+      padding: 24px;
+
+      border-radius: 14px;
+
+      text-align: center;
+
+      direction: ltr;
+
+      box-shadow: 0 5px 18px rgba(0,0,0,.15);
+
+      margin-bottom: 38px;
+    }
+
+    .cooling-flow span {
+      display: inline-block;
+
+      padding: 10px 14px;
+
+      margin: 5px;
+
+      background: #e31b23;
+
+      border-radius: 7px;
+
+      font-weight: bold;
+    }
+
+    .arrow {
+      color: white;
+
+      font-size: 22px;
+
+      font-weight: bold;
+    }
+
+
+    /* =========================
+       DASHBOARD
+    ========================== */
+
+    .dashboard {
+      display: grid;
+
+      grid-template-columns:
+      repeat(auto-fit, minmax(245px, 1fr));
+
+      gap: 20px;
+    }
+
+
+    /* =========================
+       TOPIC CARDS
+    ========================== */
+
+    .topic-card {
+      position: relative;
+
+      display: block;
+
+      min-height: 190px;
+
+      padding: 24px 24px 50px;
+
+      background: white;
+
+      color: #122033;
+
+      border-radius: 15px;
+
+      border-top: 5px solid #e31b23;
+
+      box-shadow: 0 5px 18px rgba(0,0,0,.08);
+
+      text-decoration: none;
+
+      transition: .28s;
+
+      overflow: hidden;
+    }
+
+    .topic-card:hover {
+      transform: translateY(-6px);
+
+      box-shadow: 0 12px 26px rgba(0,0,0,.14);
+
+      border-top-color: #8b0000;
+    }
+
+    .topic-card::after {
+      content: "→";
+
+      position: absolute;
+
+      left: 20px;
+      bottom: 12px;
+
+      color: #e31b23;
+
+      font-size: 25px;
+
+      font-weight: bold;
+    }
+
+    .topic-card h3 {
+      margin: 0 0 5px;
+
+      color: #8b0000;
+
+      font-size: 21px;
+    }
+
+    .english {
+      color: #6b7280;
+
+      font-size: 13px;
+
+      font-weight: bold;
+
+      letter-spacing: .7px;
+
+      direction: ltr;
+
+      text-align: right;
+    }
+
+    .topic-card p {
+      margin: 14px 0 0;
+    }
+
+
+    /* =========================
+       NOTE
+    ========================== */
+
+    .note {
+      margin-top: 38px;
+
+      background: #fff3f3;
+
+      border-right: 5px solid #e31b23;
+
+      padding: 20px;
+
+      border-radius: 10px;
+    }
+
+    .note strong {
+      color: #8b0000;
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    footer {
+      background: #0d0d0d;
+
+      color: #aaa;
+
+      text-align: center;
+
+      padding: 25px;
+    }
+
+
+    /* =========================
+       MOBILE
+    ========================== */
+
+    @media (max-width: 750px) {
+
+      .navbar {
+        overflow-x: auto;
+
+        justify-content: flex-start;
+
+        padding: 0 10px;
+      }
+
+      .nav-links {
+        justify-content: flex-start;
+
+        flex-wrap: nowrap;
+      }
+
+      .nav-links a {
+        white-space: nowrap;
+
+        font-size: 12px;
+
+        padding: 15px 11px;
+      }
+
+      .dropdown-content {
+        min-width: 210px;
+      }
+
+      header {
+        min-height: 260px;
+
+        padding: 105px 15px 45px;
+      }
+
+      header h1 {
+        font-size: 30px;
+      }
+
+      header p {
+        font-size: 15px;
+      }
+
+      .logo-left {
+        width: 75px;
+        height: 75px;
+
+        left: 15px;
+        top: 15px;
+      }
+
+      .logo-right {
+        width: 75px;
+        height: 75px;
+
+        right: 15px;
+        top: 15px;
+      }
+
+      .cooling-flow span {
+        display: block;
+      }
+
+      .arrow {
+        display: block;
+
+        transform: rotate(90deg);
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <!-- =========================
+       NAVBAR
+  ========================== -->
+
+  <nav class="navbar">
+
+    <ul class="nav-links">
+
+
+      <li>
+
+        <a href="index.html">
+          HOME
+        </a>
+
+      </li>
+
+
+      <!-- SYSTEMS -->
+
+      <li class="dropdown">
+
+        <a href="#" class="systems-active">
+          SYSTEMS ▾
+        </a>
+
+
+        <div class="dropdown-content">
+
+
+          <a href="engine-system.html">
+            Engine System
+          </a>
+
+
+          <a href="fuel-system.html">
+            Fuel System
+          </a>
+
+
+          <a
+            href="cooling-system.html"
+            class="current-system"
+          >
+            Cooling System
+          </a>
+
+
+          <a href="lubrication-system.html">
+            Lubrication System
+          </a>
+
+
+          <a href="air-intake-system.html">
+            Air Intake System
+          </a>
+
+
+          <a href="exhaust-system.html">
+            Exhaust System
+          </a>
+
+
+          <a href="starting-system.html">
+            Starting System
+          </a>
+
+
+          <a href="charging-system.html">
+            Charging System
+          </a>
+
+
+          <a href="control-system.html">
+            Control System
+          </a>
+
+
+          <a href="electrical-system.html">
+            Electrical System
+          </a>
+
+
+        </div>
+
+
+      </li>
+
+
+      <li>
+
+        <a href="index.html#components">
+          COMPONENTS
+        </a>
+
+      </li>
+
+
+      <li>
+
+        <a href="index.html#terms">
+          TERMS
+        </a>
+
+      </li>
+
+
+      <li>
+
+        <a href="index.html#questions">
+          QUESTIONS
+        </a>
+
+      </li>
+
+
+      <li>
+
+        <a href="about.html">
+          ABOUT
+        </a>
+
+      </li>
+
+
+    </ul>
+
+  </nav>
+
+
+
+  <!-- =========================
+       HEADER
+  ========================== -->
+
+  <header>
+
+
+    <!-- LEFT LOGO -->
+
+    <img
+      src="logo.png"
+      alt="Generator Hub Logo"
+      class="logo-left"
+    >
+
+
+    <!-- RIGHT LOGO -->
+
+    <img
+      src="LOGO.2.PNG"
+      alt="Mohanad Logo"
+      class="logo-right"
+    >
+
+
+    <h1>
+      COOLING SYSTEM
+    </h1>
+
+
+    <p>
+      نظام التبريد في مولدات الديزل
+    </p>
+
+
+  </header>
+
+
+
+  <!-- =========================
+       MAIN
+  ========================== -->
+
+  <main>
+
+
+    <!-- INTRODUCTION -->
+
+    <section class="intro">
+
+      <h2>
+        ما هو نظام التبريد؟
+      </h2>
+
+
+      <p>
+        نظام التبريد في مولد الديزل مسؤول عن إزالة الحرارة
+        الناتجة أثناء تشغيل المحرك والمحافظة على درجة حرارة
+        المحرك ضمن نطاق التشغيل المناسب.
+      </p>
+
+
+      <p>
+        بدلاً من وضع جميع المعلومات في صفحة واحدة طويلة،
+        يمكنك اختيار الموضوع الذي تريد دراسته من البطاقات
+        الموجودة بالأسفل، وكل موضوع يفتح في صفحة مستقلة.
+      </p>
+
+
+    </section>
+
+
+
+    <!-- =========================
+         COOLING FLOW
+    ========================== -->
+
+    <h2 class="section-title">
+      مسار سائل التبريد
+    </h2>
+
+
+    <div class="cooling-flow">
+
+
+      <span>
+        Water Pump
+      </span>
+
+
+      <b class="arrow">
+        →
+      </b>
+
+
+      <span>
+        Engine
+      </span>
+
+
+      <b class="arrow">
+        →
+      </b>
+
+
+      <span>
+        Thermostat
+      </span>
+
+
+      <b class="arrow">
+        →
+      </b>
+
+
+      <span>
+        Radiator
+      </span>
+
+
+      <b class="arrow">
+        →
+      </b>
+
+
+      <span>
+        Water Pump
+      </span>
+
+
+    </div>
+
+
+
+    <!-- =========================
+         TOPICS
+    ========================== -->
+
+    <h2 class="section-title">
+      مواضيع نظام التبريد
+    </h2>
+
+
+    <div class="dashboard">
+
+
+      <!-- RADIATOR -->
+
+      <a
+        href="radiator.html"
+        class="topic-card"
+      >
+
+        <h3>
+          الرادييتر
+        </h3>
+
+        <div class="english">
+          RADIATOR
+        </div>
+
+        <p>
+          وظيفة الرادييتر، طريقة التبريد،
+          تدفق الهواء، الفحص والصيانة.
+        </p>
+
       </a>
 
-      <div class="dropdown-content">
-
-        <a href="engine-system.html">
-          Engine System
-        </a>
-
-        <a href="fuel-system.html">
-          Fuel System
-        </a>
-
-        <a href="cooling-system.html" class="current-system">
-          Cooling System
-        </a>
-
-        <a href="lubrication-system.html">
-          Lubrication System
-        </a>
-
-        <a href="air-intake-system.html">
-          Air Intake System
-        </a>
-
-        <a href="exhaust-system.html">
-          Exhaust System
-        </a>
-
-        <a href="starting-system.html">
-          Starting System
-        </a>
-
-        <a href="charging-system.html">
-          Charging System
-        </a>
-
-        <a href="control-system.html">
-          Control System
-        </a>
-
-        <a href="electrical-system.html">
-          Electrical System
-        </a>
-
-      </div>
-
-    </li>
 
 
-    <li>
-      <a href="index.html#components">
-        COMPONENTS
+      <!-- WATER PUMP -->
+
+      <a
+        href="water-pump.html"
+        class="topic-card"
+      >
+
+        <h3>
+          مضخة الماء
+        </h3>
+
+        <div class="english">
+          WATER PUMP
+        </div>
+
+        <p>
+          كيفية تدوير سائل التبريد
+          داخل المحرك ودورة التبريد.
+        </p>
+
       </a>
-    </li>
 
-    <li>
-      <a href="index.html#terms">
-        TERMS
+
+
+      <!-- THERMOSTAT -->
+
+      <a
+        href="thermostat.html"
+        class="topic-card"
+      >
+
+        <h3>
+          الثرموستات
+        </h3>
+
+        <div class="english">
+          THERMOSTAT
+        </div>
+
+        <p>
+          التحكم بدرجة حرارة المحرك
+          وتنظيم مرور سائل التبريد.
+        </p>
+
       </a>
-    </li>
 
-    <li>
-      <a href="index.html#questions">
-        QUESTIONS
+
+
+      <!-- COOLANT -->
+
+      <a
+        href="coolant.html"
+        class="topic-card"
+      >
+
+        <h3>
+          سائل التبريد
+        </h3>
+
+        <div class="english">
+          COOLANT
+        </div>
+
+        <p>
+          أنواع سائل التبريد،
+          الخلط والحماية من التآكل.
+        </p>
+
       </a>
-    </li>
 
-    <li>
-      <a href="about.html">
-        ABOUT
+
+
+      <!-- EXPANSION TANK -->
+
+      <a
+        href="expansion-tank.html"
+        class="topic-card"
+      >
+
+        <h3>
+          خزان التمدد
+        </h3>
+
+        <div class="english">
+          EXPANSION TANK
+        </div>
+
+        <p>
+          وظيفة خزان التمدد
+          ومستوى وضغط سائل التبريد.
+        </p>
+
       </a>
-    </li>
 
-  </ul>
 
-</nav>
+
+      <!-- RADIATOR FAN -->
+
+      <a
+        href="radiator-fan.html"
+        class="topic-card"
+      >
+
+        <h3>
+          مروحة الرادييتر
+        </h3>
+
+        <div class="english">
+          RADIATOR FAN
+        </div>
+
+        <p>
+          اتجاه تدفق الهواء
+          ودور المروحة في إزالة الحرارة.
+        </p>
+
+      </a>
+
+
+
+      <!-- HOSES -->
+
+      <a
+        href="cooling-hoses.html"
+        class="topic-card"
+      >
+
+        <h3>
+          خراطيم التبريد
+        </h3>
+
+        <div class="english">
+          COOLANT HOSES
+        </div>
+
+        <p>
+          توصيل أجزاء النظام
+          والفحص والتسريب والمشاكل الشائعة.
+        </p>
+
+      </a>
+
+
+
+      <!-- SENSOR -->
+
+      <a
+        href="temperature-sensor.html"
+        class="topic-card"
+      >
+
+        <h3>
+          حساس درجة الحرارة
+        </h3>
+
+        <div class="english">
+          TEMPERATURE SENSOR
+        </div>
+
+        <p>
+          مراقبة حرارة سائل التبريد
+          والإنذارات وحماية المحرك.
+        </p>
+
+      </a>
+
+
+
+      <!-- VENTILATION -->
+
+      <a
+        href="cooling-ventilation.html"
+        class="topic-card"
+      >
+
+        <h3>
+          التهوية وتدفق الهواء
+        </h3>
+
+        <div class="english">
+          VENTILATION & AIR FLOW
+        </div>
+
+        <p>
+          Fresh Air Intake،
+          Hot Air Outlet،
+          ومسار الهواء داخل غرفة المولد.
+        </p>
+
+      </a>
+
+
+
+      <!-- CALCULATIONS -->
+
+      <a
+        href="cooling-calculations.html"
+        class="topic-card"
+      >
+
+        <h3>
+          حسابات نظام التبريد
+        </h3>
+
+        <div class="english">
+          COOLING CALCULATIONS
+        </div>
+
+        <p>
+          حساب فتحات دخول وخروج الهواء
+          ومتطلبات التهوية.
+        </p>
+
+      </a>
+
+
+
+      <!-- TROUBLESHOOTING -->
+
+      <a
+        href="cooling-troubleshooting.html"
+        class="topic-card"
+      >
+
+        <h3>
+          الأعطال والحلول
+        </h3>
+
+        <div class="english">
+          TROUBLESHOOTING
+        </div>
+
+        <p>
+          ارتفاع الحرارة،
+          نقص سائل التبريد،
+          مشاكل المضخة والثرموستات.
+        </p>
+
+      </a>
+
+
+    </div>
+
+
+
+    <!-- NOTE -->
+
+    <div class="note">
+
+      <strong>
+        ملاحظة:
+      </strong>
+
+      عند الضغط على أي بطاقة،
+      سيتم فتح صفحة مستقلة للموضوع.
+
+    </div>
+
+
+  </main>
+
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer>
+
+    © 2026 Generator Hub | Cooling System
+
+  </footer>
+
+
+</body>
+
+</html>
