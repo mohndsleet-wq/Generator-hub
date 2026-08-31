@@ -1,82 +1,95 @@
-<!-- استبدل الـ NAVBAR في about.html بهذا الجزء -->
+<!-- =========================
+     NAVBAR
+========================= -->
 
 <nav class="navbar">
+
   <ul class="nav-links">
 
     <li>
       <a href="index.html">HOME</a>
     </li>
 
+
+    <!-- SYSTEMS DROPDOWN -->
+
     <li class="dropdown">
-      <a href="#" class="dropbtn">SYSTEMS ▾</a>
+
+      <a href="#" class="dropbtn active">
+        SYSTEMS ▾
+      </a>
 
       <div class="dropdown-content">
-        <a href="engine-system.html">Engine System</a>
-        <a href="fuel-system.html">Fuel System</a>
-        <a href="cooling-system.html">Cooling System</a>
-        <a href="lubrication-system.html">Lubrication System</a>
-        <a href="air-intake-system.html">Air Intake System</a>
-        <a href="exhaust-system.html">Exhaust System</a>
-        <a href="starting-system.html">Starting System</a>
-        <a href="charging-system.html">Charging System</a>
-        <a href="control-system.html">Control System</a>
-        <a href="electrical-system.html">Electrical System</a>
+
+        <a href="engine-system.html">
+          Engine System
+        </a>
+
+        <a href="fuel-system.html">
+          Fuel System
+        </a>
+
+        <a href="cooling-system.html" class="current-system">
+          Cooling System
+        </a>
+
+        <a href="lubrication-system.html">
+          Lubrication System
+        </a>
+
+        <a href="air-intake-system.html">
+          Air Intake System
+        </a>
+
+        <a href="exhaust-system.html">
+          Exhaust System
+        </a>
+
+        <a href="starting-system.html">
+          Starting System
+        </a>
+
+        <a href="charging-system.html">
+          Charging System
+        </a>
+
+        <a href="control-system.html">
+          Control System
+        </a>
+
+        <a href="electrical-system.html">
+          Electrical System
+        </a>
+
       </div>
+
+    </li>
+
+
+    <li>
+      <a href="index.html#components">
+        COMPONENTS
+      </a>
     </li>
 
     <li>
-      <a href="index.html#components">COMPONENTS</a>
+      <a href="index.html#terms">
+        TERMS
+      </a>
     </li>
 
     <li>
-      <a href="index.html#terms">TERMS</a>
+      <a href="index.html#questions">
+        QUESTIONS
+      </a>
     </li>
 
     <li>
-      <a href="index.html#questions">QUESTIONS</a>
-    </li>
-
-    <li>
-      <a href="about.html">ABOUT</a>
+      <a href="about.html">
+        ABOUT
+      </a>
     </li>
 
   </ul>
+
 </nav>
-
-<!-- وأضف هذا CSS داخل <style> في about.html -->
-
-<style>
-  .dropdown {
-    position: relative;
-  }
-
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    min-width: 240px;
-    background: #111;
-    border-top: 3px solid #e31b23;
-    box-shadow: 0 8px 20px rgba(0,0,0,.30);
-    z-index: 9999;
-  }
-
-  .dropdown-content a {
-    display: block;
-    padding: 12px 18px;
-    color: white;
-    text-align: left;
-    white-space: nowrap;
-    border-bottom: 1px solid #292929;
-  }
-
-  .dropdown-content a:hover {
-    background: #e31b23;
-    color: white;
-  }
-
-  .dropdown:hover .dropdown-content {
-    display: block;
-  }
-</style>
