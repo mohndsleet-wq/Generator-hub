@@ -47,19 +47,35 @@
 
 
     /* =========================
-       LOGO
+       LEFT LOGO
     ========================== */
 
-   .logo {
-  position: absolute;
-  top: 20px;
-  left: 40px;
+    .logo-left {
+      position: absolute;
+      top: 20px;
+      left: 40px;
 
-  width: 230px;
-  height: 180px;
+      width: 230px;
+      height: 180px;
 
-  object-fit: contain;
-}
+      object-fit: contain;
+    }
+
+
+    /* =========================
+       RIGHT LOGO
+    ========================== */
+
+    .logo-right {
+      position: absolute;
+      top: 20px;
+      right: 40px;
+
+      width: 230px;
+      height: 180px;
+
+      object-fit: contain;
+    }
 
 
     /* =========================
@@ -168,11 +184,18 @@
         font-size: 16px;
       }
 
-      .logo {
+      .logo-left {
         width: 75px;
         height: 75px;
         top: 15px;
         left: 15px;
+      }
+
+      .logo-right {
+        width: 75px;
+        height: 75px;
+        top: 15px;
+        right: 15px;
       }
 
     }
@@ -191,12 +214,21 @@
 
   <header> 
 
-    <!-- اللوجو أعلى اليسار -->
+    <!-- اللوجو الموجود على اليسار -->
     <img 
       src="logo.png" 
       alt="Generator Hub Logo" 
-      class="logo"
+      class="logo-left"
     >
+
+
+    <!-- لوجو مهند على اليمين -->
+    <img 
+      src="LOGO.2.png" 
+      alt="Mohanad Logo" 
+      class="logo-right"
+    >
+
 
     <h1>THE WORLD OF GENERATORS</h1> 
 
