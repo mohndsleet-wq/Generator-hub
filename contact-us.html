@@ -1,1 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Contact Us | Engineering Hub</title>
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #eef2f7;
+      color: #111;
+    }
+
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 9999;
+      width: 100%;
+      min-height: 67px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #0b0b0b;
+      border-bottom: 3px solid #e31b23;
+      box-shadow: 0 4px 18px rgba(0,0,0,.28);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links a {
+      display: block;
+      padding: 23px 0;
+      color: #fff;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .3px;
+      transition: .2s ease;
+      white-space: nowrap;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: #e31b23;
+    }
+
+    @media (max-width: 950px) {
+      .navbar {
+        justify-content: flex-start;
+        overflow-x: auto;
+      }
+
+      .nav-links {
+        min-width: max-content;
+        padding: 0 18px;
+        gap: 18px;
+      }
+
+      .nav-links a {
+        font-size: 11px;
+      }
+    }
+
+
+    .contact-page {
+      min-height: calc(100vh - 67px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 24px;
+      background:
+        radial-gradient(circle at 75% 20%, rgba(227,27,35,.10), transparent 30%),
+        linear-gradient(180deg,#fff,#f3f5f8);
+    }
+
+    .contact-card {
+      width: min(760px,100%);
+      padding: 50px;
+      background: #fff;
+      border: 1px solid #e3e5e8;
+      border-top: 4px solid #e31b23;
+      border-radius: 18px;
+      box-shadow: 0 20px 55px rgba(0,0,0,.12);
+    }
+
+    .label {
+      color: #e31b23;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 2px;
+    }
+
+    h1 {
+      margin: 12px 0 12px;
+      font-size: 44px;
+      font-weight: 900;
+    }
+
+    h1 span {
+      color: #e31b23;
+    }
+
+    p {
+      margin: 0;
+      color: #6f757c;
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    .note {
+      margin-top: 30px;
+      padding: 18px 20px;
+      border-left: 4px solid #e31b23;
+      background: #f7f8fa;
+      color: #444;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    @media (max-width: 650px) {
+      .contact-card {
+        padding: 34px 24px;
+      }
+
+      h1 {
+        font-size: 34px;
+      }
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <nav class="navbar">
+    <ul class="nav-links">
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="profile.html">ENGINEER PROFILE</a></li>
+      <li><a href="generator.html">GENERATOR</a></li>
+      <li><a href="components.html">COMPONENTS</a></li>
+      <li><a href="terms.html">TERMS</a></li>
+      <li><a href="questions.html">QUESTIONS</a></li>
+      <li><a href="about.html">ABOUT</a></li>
+      <li><a href="contact-us.html" class="active">CONTACT US</a></li>
+    </ul>
+  </nav>
+
+  <main class="contact-page">
+
+    <section class="contact-card">
+
+      <div class="label">
+        CONTACT
+      </div>
+
+      <h1>
+        CONTACT <span>US</span>
+      </h1>
+
+      <p>
+        This page is ready for your professional contact information.
+        We can add your email, phone number, LinkedIn profile, company details
+        or a contact form whenever you want.
+      </p>
+
+      <div class="note">
+        Contact details will be added here.
+      </div>
+
+    </section>
+
+  </main>
+
+</body>
+
+</html>
