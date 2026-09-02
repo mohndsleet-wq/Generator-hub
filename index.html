@@ -4,11 +4,17 @@
 <head>
 
   <meta charset="UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Generator Systems | عالم المولدات</title>
 
+
   <style>
+
+    /* =====================================================
+       GENERAL
+    ===================================================== */
 
     * {
       box-sizing: border-box;
@@ -20,8 +26,14 @@
 
     body {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
+
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
       background: #eef2f7;
+
       color: #111;
     }
 
@@ -32,14 +44,19 @@
 
     .navbar {
       position: sticky;
+
       top: 0;
+
       z-index: 9999;
 
       width: 100%;
+
       min-height: 67px;
 
       display: flex;
+
       align-items: center;
+
       justify-content: center;
 
       background: #0b0b0b;
@@ -47,13 +64,16 @@
       border-bottom: 3px solid #e31b23;
 
       box-shadow:
-        0 4px 18px rgba(0,0,0,.28);
+        0 4px 18px
+        rgba(0, 0, 0, 0.28);
     }
 
 
     .nav-links {
       display: flex;
+
       align-items: center;
+
       justify-content: center;
 
       gap: 43px;
@@ -61,6 +81,7 @@
       list-style: none;
 
       margin: 0;
+
       padding: 0;
     }
 
@@ -80,9 +101,11 @@
       text-decoration: none;
 
       font-size: 15px;
+
       font-weight: 700;
 
-      transition: .2s ease;
+      transition:
+        color 0.2s ease;
     }
 
 
@@ -99,43 +122,54 @@
       position: absolute;
 
       top: 100%;
+
       left: 50%;
 
-      transform: translateX(-50%);
+      transform:
+        translateX(-50%);
 
-      width: 245px;
+      width: 250px;
 
       display: none;
 
+      overflow: hidden;
+
       background: #111;
 
-      border-top: 3px solid #e31b23;
+      border-top:
+        3px solid #e31b23;
 
       box-shadow:
-        0 15px 35px rgba(0,0,0,.4);
-
-      overflow: hidden;
+        0 15px 35px
+        rgba(0, 0, 0, 0.4);
     }
 
 
-    .dropdown:hover .dropdown-menu {
+    .dropdown:hover
+    .dropdown-menu {
       display: block;
     }
 
 
     .dropdown-menu a {
-      padding: 13px 18px;
+      padding:
+        13px 18px;
 
-      font-size: 13px;
+      font-size:
+        13px;
 
       border-bottom:
-        1px solid rgba(255,255,255,.07);
+        1px solid
+        rgba(255, 255, 255, 0.07);
     }
 
 
     .dropdown-menu a:hover {
-      background: #e31b23;
-      color: white;
+      background:
+        #e31b23;
+
+      color:
+        white;
     }
 
 
@@ -144,18 +178,24 @@
     ===================================================== */
 
     .page {
-      width: min(1180px, 100%);
-      min-height: calc(100vh - 67px);
+      width:
+        min(1180px, 100%);
 
-      margin: 0 auto;
+      min-height:
+        calc(100vh - 67px);
+
+      margin:
+        0 auto;
 
       padding:
-        0 30px 70px;
+        0 28px 70px;
 
-      background: white;
+      background:
+        #ffffff;
 
       box-shadow:
-        0 0 40px rgba(0,0,0,.08);
+        0 0 40px
+        rgba(0, 0, 0, 0.08);
     }
 
 
@@ -164,18 +204,23 @@
     ===================================================== */
 
     .hero {
-      text-align: center;
+      text-align:
+        center;
 
       padding:
-        0 20px 22px;
+        0 20px 24px;
     }
 
 
     .hero-tag {
-      display: inline-flex;
+      display:
+        inline-flex;
 
-      align-items: center;
-      justify-content: center;
+      align-items:
+        center;
+
+      justify-content:
+        center;
 
       padding:
         8px 18px;
@@ -184,44 +229,56 @@
         0 0 22px 22px;
 
       background:
-        rgba(227,27,35,.07);
+        rgba(227, 27, 35, 0.07);
 
       border:
-        1px solid rgba(227,27,35,.20);
+        1px solid
+        rgba(227, 27, 35, 0.20);
 
-      color: #e31b23;
+      color:
+        #e31b23;
 
-      font-size: 11px;
-      font-weight: 700;
+      font-size:
+        11px;
 
-      letter-spacing: 2px;
+      font-weight:
+        700;
+
+      letter-spacing:
+        2px;
     }
 
 
     .hero h1 {
       margin:
-        23px 0 9px;
+        24px 0 9px;
 
       font-size:
         clamp(30px, 4vw, 42px);
 
-      line-height: 1.05;
+      line-height:
+        1.05;
 
-      font-weight: 900;
+      font-weight:
+        900;
     }
 
 
     .hero h1 span {
-      color: #e31b23;
+      color:
+        #e31b23;
     }
 
 
     .hero p {
-      margin: 0;
+      margin:
+        0;
 
-      color: #6e747b;
+      color:
+        #6e747b;
 
-      font-size: 15px;
+      font-size:
+        15px;
     }
 
 
@@ -230,26 +287,31 @@
     ===================================================== */
 
     .generator-card {
-      width: min(1000px, 100%);
+      width:
+        min(1020px, 100%);
 
-      margin: 0 auto;
+      margin:
+        0 auto;
 
-      padding: 20px;
+      padding:
+        18px;
 
-      border-radius: 22px;
+      border-radius:
+        22px;
 
       background:
         linear-gradient(
           145deg,
           #ffffff,
-          #f5f7f9
+          #f4f6f8
         );
 
       border:
         1px solid #e5e5e5;
 
       box-shadow:
-        0 20px 50px rgba(0,0,0,.12);
+        0 20px 50px
+        rgba(0, 0, 0, 0.13);
     }
 
 
@@ -258,116 +320,76 @@
     ===================================================== */
 
     .generator-wrapper {
-      position: relative;
+      position:
+        relative;
 
-      width: 100%;
+      width:
+        100%;
 
-      min-height: 400px;
+      margin:
+        0 auto;
 
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      overflow:
+        hidden;
 
-      overflow: hidden;
-
-      border-radius: 16px;
+      border-radius:
+        16px;
 
       background:
-        radial-gradient(
-          circle at center,
-          #ffffff 0%,
-          #f4f5f7 70%,
-          #eceff2 100%
-        );
+        #ffffff;
     }
 
 
     /* =====================================================
        GENERATOR IMAGE
+
+       اسم الصورة الحقيقي الموجود عندك:
+       generator-main.png.png
     ===================================================== */
 
     .generator-image {
-      position: relative;
-      z-index: 1;
+      position:
+        relative;
 
-      display: block;
+      z-index:
+        1;
 
-      width: 100%;
-      height: auto;
+      display:
+        block;
 
-      max-height: 690px;
+      width:
+        100%;
 
-      object-fit: contain;
+      height:
+        auto;
 
-      user-select: none;
+      object-fit:
+        contain;
 
-      -webkit-user-drag: none;
+      user-select:
+        none;
 
-      opacity: 0;
-
-      transition:
-        opacity .3s ease;
-    }
-
-
-    .generator-image.loaded {
-      opacity: 1;
-    }
-
-
-    /* =====================================================
-       LOADING
-    ===================================================== */
-
-    .loading {
-      position: absolute;
-
-      z-index: 2;
-
-      left: 50%;
-      top: 50%;
-
-      transform:
-        translate(-50%, -50%);
-
-      color: #777;
-
-      font-size: 14px;
-
-      text-align: center;
-    }
-
-
-    .loading strong {
-      display: block;
-
-      margin-bottom: 8px;
-
-      color: #e31b23;
-
-      font-size: 17px;
+      -webkit-user-drag:
+        none;
     }
 
 
     /* =====================================================
        HOTSPOT LAYER
-
-       مخفية إلى أن تفتح الصورة
     ===================================================== */
 
     .hotspot-layer {
-      position: absolute;
+      position:
+        absolute;
 
-      inset: 0;
+      inset:
+        0;
 
-      z-index: 50;
+      z-index:
+        50;
 
-      display: none;
-    }
-
-
-    .hotspot-layer.active {
-      display: block;
+      pointer-events:
+        none;
     }
 
 
@@ -376,34 +398,48 @@
     ===================================================== */
 
     .hotspot {
-      position: absolute;
+      position:
+        absolute;
 
-      width: 32px;
-      height: 32px;
+      width:
+        32px;
+
+      height:
+        32px;
 
       transform:
         translate(-50%, -50%);
 
-      border-radius: 50%;
+      border-radius:
+        50%;
 
-      background: #e31b23;
+      background:
+        #e31b23;
 
-      border: 3px solid white;
+      border:
+        3px solid white;
 
       box-shadow:
 
         0 0 0 7px
-        rgba(227,27,35,.15),
+        rgba(227, 27, 35, 0.15),
 
         0 0 22px
-        rgba(227,27,35,.90);
+        rgba(227, 27, 35, 0.90);
 
-      cursor: pointer;
+      cursor:
+        pointer;
 
-      text-decoration: none;
+      text-decoration:
+        none;
+
+      pointer-events:
+        auto;
 
       transition:
-        .2s ease;
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
     }
 
 
@@ -412,128 +448,173 @@
         translate(-50%, -50%)
         scale(1.28);
 
-      background: #ff2018;
+      background:
+        #ff2018;
 
       box-shadow:
 
-        0 0 0 9px
-        rgba(227,27,35,.17),
+        0 0 0 10px
+        rgba(227, 27, 35, 0.18),
 
-        0 0 30px
-        rgba(227,27,35,1);
+        0 0 32px
+        rgba(227, 27, 35, 1);
     }
 
 
-    /* white center */
+    /* =====================================================
+       WHITE CENTER
+    ===================================================== */
 
     .hotspot::before {
-      content: "";
+      content:
+        "";
 
-      position: absolute;
+      position:
+        absolute;
 
-      left: 50%;
-      top: 50%;
+      left:
+        50%;
 
-      width: 8px;
-      height: 8px;
+      top:
+        50%;
+
+      width:
+        8px;
+
+      height:
+        8px;
 
       transform:
         translate(-50%, -50%);
 
-      border-radius: 50%;
+      border-radius:
+        50%;
 
-      background: white;
+      background:
+        white;
     }
 
 
-    /* pulse */
+    /* =====================================================
+       PULSE
+    ===================================================== */
 
     .hotspot::after {
-      content: "";
+      content:
+        "";
 
-      position: absolute;
+      position:
+        absolute;
 
-      inset: -11px;
+      inset:
+        -11px;
 
-      border-radius: 50%;
+      border-radius:
+        50%;
 
       border:
-        2px solid rgba(227,27,35,.60);
+        2px solid
+        rgba(227, 27, 35, 0.60);
 
       animation:
         hotspotPulse 1.6s infinite;
 
-      pointer-events: none;
+      pointer-events:
+        none;
     }
 
 
     @keyframes hotspotPulse {
 
       0% {
-        transform: scale(.65);
-        opacity: 1;
+        transform:
+          scale(0.65);
+
+        opacity:
+          1;
       }
 
       100% {
-        transform: scale(1.6);
-        opacity: 0;
+        transform:
+          scale(1.6);
+
+        opacity:
+          0;
       }
 
     }
 
 
     /* =====================================================
-       HOTSPOT LABEL
+       LABELS
     ===================================================== */
 
     .hotspot span {
-      position: absolute;
+      position:
+        absolute;
 
-      left: 50%;
-      bottom: 47px;
+      left:
+        50%;
+
+      bottom:
+        47px;
 
       transform:
         translateX(-50%)
         translateY(8px);
 
-      min-width: max-content;
+      min-width:
+        max-content;
 
       padding:
         9px 13px;
 
-      border-radius: 7px;
+      border-radius:
+        7px;
 
       background:
-        rgba(10,10,10,.96);
+        rgba(10, 10, 10, 0.97);
 
       border:
-        1px solid rgba(227,27,35,.55);
+        1px solid
+        rgba(227, 27, 35, 0.60);
 
-      color: white;
+      color:
+        white;
 
-      font-size: 11px;
-      font-weight: 700;
+      font-size:
+        11px;
 
-      white-space: nowrap;
+      font-weight:
+        700;
 
-      opacity: 0;
+      white-space:
+        nowrap;
 
-      visibility: hidden;
+      opacity:
+        0;
 
-      pointer-events: none;
+      visibility:
+        hidden;
+
+      pointer-events:
+        none;
 
       box-shadow:
-        0 10px 25px rgba(0,0,0,.35);
+        0 10px 25px
+        rgba(0, 0, 0, 0.35);
 
       transition:
-        .2s ease;
+        0.2s ease;
     }
 
 
     .hotspot:hover span {
-      opacity: 1;
+      opacity:
+        1;
 
-      visibility: visible;
+      visibility:
+        visible;
 
       transform:
         translateX(-50%)
@@ -542,89 +623,120 @@
 
 
     /* =====================================================
-       LOCATIONS
+       HOTSPOT POSITIONS
 
-       هاي الأماكن على المولد اللي كان ظاهر عندك
+       بعد ما تظهر الصورة بنزبط المواقع
+       بشكل نهائي إذا احتجنا
     ===================================================== */
 
 
     /* RADIATOR */
 
     .cooling {
-      left: 20%;
-      top: 48%;
+      left:
+        19%;
+
+      top:
+        48%;
     }
 
 
     /* ENGINE */
 
     .engine {
-      left: 43%;
-      top: 52%;
+      left:
+        43%;
+
+      top:
+        52%;
     }
 
 
-    /* SILENCER */
+    /* EXHAUST SILENCER */
 
     .exhaust {
-      left: 48%;
-      top: 17%;
+      left:
+        48%;
+
+      top:
+        16%;
     }
 
 
-    /* AIR FILTER */
+    /* AIR INTAKE */
 
     .air-intake {
-      left: 64%;
-      top: 31%;
+      left:
+        64%;
+
+      top:
+        31%;
     }
 
 
-    /* FUEL FILTERS */
+    /* FUEL SYSTEM */
 
     .fuel {
-      left: 48%;
-      top: 68%;
+      left:
+        47%;
+
+      top:
+        68%;
     }
 
 
-    /* ENGINE OIL AREA */
+    /* LUBRICATION */
 
     .lubrication {
-      left: 39%;
-      top: 63%;
+      left:
+        39%;
+
+      top:
+        63%;
     }
 
 
-    /* BATTERIES */
+    /* STARTING / BATTERIES */
 
     .starting {
-      left: 72%;
-      top: 76%;
+      left:
+        72%;
+
+      top:
+        76%;
     }
 
 
-    /* CHARGING AREA */
+    /* CHARGING */
 
     .charging {
-      left: 54%;
-      top: 48%;
+      left:
+        54%;
+
+      top:
+        48%;
     }
 
 
     /* ALTERNATOR */
 
     .alternator {
-      left: 70%;
-      top: 56%;
+      left:
+        70%;
+
+      top:
+        56%;
     }
 
 
-    /* CONTROLLER */
+    /* CONTROL PANEL */
 
     .control {
-      left: 82%;
-      top: 38%;
+      left:
+        82%;
+
+      top:
+        38%;
     }
 
 
@@ -633,31 +745,45 @@
     ===================================================== */
 
     .help {
-      display: flex;
+      display:
+        flex;
 
-      align-items: center;
-      justify-content: center;
+      align-items:
+        center;
 
-      gap: 9px;
+      justify-content:
+        center;
 
-      margin-top: 23px;
+      gap:
+        9px;
 
-      color: #747474;
+      margin-top:
+        23px;
 
-      font-size: 12px;
+      color:
+        #747474;
+
+      font-size:
+        12px;
     }
 
 
     .help-dot {
-      width: 9px;
-      height: 9px;
+      width:
+        9px;
 
-      border-radius: 50%;
+      height:
+        9px;
 
-      background: #e31b23;
+      border-radius:
+        50%;
+
+      background:
+        #e31b23;
 
       box-shadow:
-        0 0 10px rgba(227,27,35,.75);
+        0 0 10px
+        rgba(227, 27, 35, 0.75);
     }
 
 
@@ -668,39 +794,59 @@
     @media (max-width: 800px) {
 
       .nav-links {
-        gap: 20px;
+        gap:
+          20px;
       }
 
+
       .nav-links a {
-        font-size: 12px;
+        font-size:
+          12px;
       }
+
 
       .page {
         padding:
           0 8px 50px;
       }
 
+
       .generator-card {
-        padding: 8px;
+        padding:
+          8px;
       }
 
-      .generator-wrapper {
-        min-height: 250px;
-      }
 
       .hotspot {
-        width: 24px;
-        height: 24px;
+        width:
+          24px;
 
-        border-width: 2px;
+        height:
+          24px;
+
+        border-width:
+          2px;
       }
+
+
+      .hotspot::before {
+        width:
+          6px;
+
+        height:
+          6px;
+      }
+
 
       .hotspot::after {
-        inset: -8px;
+        inset:
+          -8px;
       }
 
+
       .hotspot span {
-        display: none;
+        display:
+          none;
       }
 
     }
@@ -708,16 +854,36 @@
 
     @media (max-width: 550px) {
 
-      .nav-links {
-        gap: 13px;
+      .navbar {
+        overflow-x:
+          auto;
       }
+
+
+      .nav-links {
+        gap:
+          13px;
+
+        padding:
+          0 15px;
+      }
+
 
       .nav-links a {
-        font-size: 10px;
+        font-size:
+          10px;
       }
 
+
       .hero h1 {
-        font-size: 27px;
+        font-size:
+          27px;
+      }
+
+
+      .hero p {
+        font-size:
+          13px;
       }
 
     }
@@ -725,6 +891,7 @@
   </style>
 
 </head>
+
 
 
 <body>
@@ -736,16 +903,22 @@
 
   <nav class="navbar">
 
+
     <ul class="nav-links">
 
+
       <li>
+
         <a href="index.html">
           HOME
         </a>
+
       </li>
 
 
+
       <li class="dropdown">
+
 
         <a href="#">
           SYSTEMS ▼
@@ -754,71 +927,105 @@
 
         <div class="dropdown-menu">
 
+
           <a href="engine-system.html">
             Engine System
           </a>
+
 
           <a href="fuel-system.html">
             Fuel System
           </a>
 
+
           <a href="cooling-system.html">
             Cooling System
           </a>
+
 
           <a href="lubrication-system.html">
             Lubrication System
           </a>
 
+
           <a href="air-intake-system.html">
             Air Intake System
           </a>
+
 
           <a href="exhaust-system.html">
             Exhaust System
           </a>
 
+
           <a href="starting-system.html">
             Starting System
           </a>
+
 
           <a href="charging-system.html">
             Charging System
           </a>
 
+
+          <a href="alternator-system.html">
+            Alternator System
+          </a>
+
+
+          <a href="control-system.html">
+            Control System
+          </a>
+
+
         </div>
+
 
       </li>
 
 
+
       <li>
+
         <a href="components.html">
           COMPONENTS
         </a>
+
       </li>
 
 
+
       <li>
+
         <a href="terms.html">
           TERMS
         </a>
+
       </li>
 
 
+
       <li>
+
         <a href="questions.html">
           QUESTIONS
         </a>
+
       </li>
+
 
 
       <li>
+
         <a href="about.html">
           ABOUT
         </a>
+
       </li>
 
+
     </ul>
+
 
   </nav>
 
@@ -831,14 +1038,19 @@
   <main class="page">
 
 
-    <!-- HERO -->
+    <!-- ===================================================
+         HERO
+    ==================================================== -->
 
     <section class="hero">
 
 
       <div class="hero-tag">
+
         INTERACTIVE GENERATOR
+
       </div>
+
 
 
       <h1>
@@ -850,6 +1062,7 @@
         </span>
 
       </h1>
+
 
 
       <p>
@@ -865,65 +1078,53 @@
 
 
     <!-- ===================================================
-         GENERATOR CARD
+         GENERATOR
     ==================================================== -->
 
     <section class="generator-card">
 
 
-      <div
-        class="generator-wrapper"
-        id="generatorWrapper"
-      >
+      <div class="generator-wrapper">
 
 
-        <!-- LOADING -->
+        <!-- ===============================================
+             GENERATOR IMAGE
 
-        <div
-          class="loading"
-          id="loadingMessage"
-        >
-
-          <strong>
-            Loading Generator...
-          </strong>
-
-          Interactive Generator System
-
-        </div>
-
-
-
-        <!-- =================================================
-             IMAGE
-
-             لا تغير هذا.
-             الكود تحت رح يجرب عدة أسماء تلقائياً.
-        ================================================== -->
+             هذا اسم الصورة الحقيقي عندك في GitHub
+        ================================================ -->
 
         <img
-          id="generatorImage"
+
+          src="/generator-main.png.png"
+
           class="generator-image"
-          alt="Generator Set"
+
+          alt="Diesel Generator Set"
+
+          draggable="false"
+
         >
 
 
 
-        <!-- =================================================
-             CLICKABLE AREAS
-        ================================================== -->
+        <!-- ===============================================
+             HOTSPOT LAYER
+        ================================================ -->
 
-        <div
-          class="hotspot-layer"
-          id="hotspotLayer"
-        >
+        <div class="hotspot-layer">
 
 
-          <!-- COOLING -->
+
+          <!-- COOLING SYSTEM -->
 
           <a
+
             href="cooling-system.html"
+
             class="hotspot cooling"
+
+            title="Cooling System"
+
           >
 
             <span>
@@ -934,11 +1135,16 @@
 
 
 
-          <!-- ENGINE -->
+          <!-- ENGINE SYSTEM -->
 
           <a
+
             href="engine-system.html"
+
             class="hotspot engine"
+
+            title="Engine System"
+
           >
 
             <span>
@@ -949,11 +1155,16 @@
 
 
 
-          <!-- EXHAUST -->
+          <!-- EXHAUST SYSTEM -->
 
           <a
+
             href="exhaust-system.html"
+
             class="hotspot exhaust"
+
+            title="Exhaust System"
+
           >
 
             <span>
@@ -964,11 +1175,16 @@
 
 
 
-          <!-- AIR INTAKE -->
+          <!-- AIR INTAKE SYSTEM -->
 
           <a
+
             href="air-intake-system.html"
+
             class="hotspot air-intake"
+
+            title="Air Intake System"
+
           >
 
             <span>
@@ -979,11 +1195,16 @@
 
 
 
-          <!-- FUEL -->
+          <!-- FUEL SYSTEM -->
 
           <a
+
             href="fuel-system.html"
+
             class="hotspot fuel"
+
+            title="Fuel System"
+
           >
 
             <span>
@@ -994,11 +1215,16 @@
 
 
 
-          <!-- LUBRICATION -->
+          <!-- LUBRICATION SYSTEM -->
 
           <a
+
             href="lubrication-system.html"
+
             class="hotspot lubrication"
+
+            title="Lubrication System"
+
           >
 
             <span>
@@ -1009,11 +1235,16 @@
 
 
 
-          <!-- STARTING -->
+          <!-- STARTING SYSTEM -->
 
           <a
+
             href="starting-system.html"
+
             class="hotspot starting"
+
+            title="Starting System"
+
           >
 
             <span>
@@ -1024,11 +1255,16 @@
 
 
 
-          <!-- CHARGING -->
+          <!-- CHARGING SYSTEM -->
 
           <a
+
             href="charging-system.html"
+
             class="hotspot charging"
+
+            title="Charging System"
+
           >
 
             <span>
@@ -1042,8 +1278,13 @@
           <!-- ALTERNATOR -->
 
           <a
+
             href="alternator-system.html"
+
             class="hotspot alternator"
+
+            title="Alternator"
+
           >
 
             <span>
@@ -1054,11 +1295,16 @@
 
 
 
-          <!-- CONTROL -->
+          <!-- CONTROL SYSTEM -->
 
           <a
+
             href="control-system.html"
+
             class="hotspot control"
+
+            title="Control System"
+
           >
 
             <span>
@@ -1075,13 +1321,19 @@
 
 
 
-      <!-- HELP -->
+      <!-- =================================================
+           HELP
+      ================================================== -->
 
       <div class="help">
 
+
         <span class="help-dot"></span>
 
-        Click any highlighted component to open its system
+
+        Click any highlighted component
+        to open its system
+
 
       </div>
 
@@ -1090,159 +1342,6 @@
 
 
   </main>
-
-
-
-  <!-- =====================================================
-       IMAGE AUTO DETECTION
-  ====================================================== -->
-
-  <script>
-
-    const generatorImage =
-      document.getElementById(
-        "generatorImage"
-      );
-
-
-    const hotspotLayer =
-      document.getElementById(
-        "hotspotLayer"
-      );
-
-
-    const loadingMessage =
-      document.getElementById(
-        "loadingMessage"
-      );
-
-
-    /*
-      الكود رح يجرب أسماء الصور هدول بالترتيب.
-
-      يعني مش لازم نعرف حالياً هل الصورة
-      PNG أو JPG.
-    */
-
-    const possibleImages = [
-
-      "generator.jpg",
-
-      "generator.png",
-
-      "Generator.jpg",
-
-      "Generator.png",
-
-      "genset.jpg",
-
-      "genset.png",
-
-      "generator-set.jpg",
-
-      "generator-set.png"
-
-    ];
-
-
-    let imageIndex = 0;
-
-
-
-    function tryNextImage() {
-
-
-      if (
-        imageIndex >=
-        possibleImages.length
-      ) {
-
-
-        loadingMessage.innerHTML = `
-
-          <strong>
-            Generator Image Not Found
-          </strong>
-
-          Upload the generator image to the same folder
-          as generator.htm.
-
-        `;
-
-
-        return;
-
-      }
-
-
-      generatorImage.src =
-        possibleImages[
-          imageIndex
-        ];
-
-
-      imageIndex++;
-
-    }
-
-
-
-    generatorImage.addEventListener(
-
-      "load",
-
-      function () {
-
-
-        generatorImage.classList.add(
-          "loaded"
-        );
-
-
-        hotspotLayer.classList.add(
-          "active"
-        );
-
-
-        loadingMessage.style.display =
-          "none";
-
-
-      }
-
-    );
-
-
-
-    generatorImage.addEventListener(
-
-      "error",
-
-      function () {
-
-
-        generatorImage.classList.remove(
-          "loaded"
-        );
-
-
-        hotspotLayer.classList.remove(
-          "active"
-        );
-
-
-        tryNextImage();
-
-
-      }
-
-    );
-
-
-
-    tryNextImage();
-
-  </script>
 
 
 </body>
