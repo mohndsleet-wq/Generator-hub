@@ -1,92 +1,92 @@
-<!DOCTYPE html> 
-<html lang="ar" dir="rtl"> 
- 
-<head> 
- 
-  <meta charset="UTF-8"> 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
- 
-  <title>Generator | عالم المولدات</title> 
- 
-  <style> 
- 
-    * { 
-      box-sizing: border-box; 
-    } 
- 
-    html { 
-      scroll-behavior: smooth; 
-    } 
- 
-    body { 
-      margin: 0; 
-      font-family: Arial, sans-serif; 
-      color: #122033; 
-      background: #f4f7fb; 
-      line-height: 1.7; 
-    } 
- 
- 
-    /* ========================= 
-       NAVBAR 
-    ========================== */ 
- 
-    .navbar { 
-      position: sticky; 
-      top: 0; 
-      z-index: 9999; 
- 
-      display: flex; 
-      align-items: center; 
-      justify-content: center; 
- 
-      min-height: 62px; 
-      padding: 0 30px; 
- 
-      background: #0d0d0d; 
-      border-bottom: 3px solid #e31b23; 
- 
-      box-shadow: 0 4px 15px rgba(0,0,0,.25); 
-    } 
- 
-    .nav-links { 
-      display: flex; 
-      align-items: center; 
-      justify-content: center; 
- 
-      list-style: none; 
-      margin: 0; 
-      padding: 0; 
- 
-      gap: 8px; 
-      direction: ltr; 
-    } 
- 
-    .nav-links li { 
-      margin: 0; 
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Generator | عالم المولدات</title>
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #122033;
+      background: #f4f7fb;
+      line-height: 1.7;
+    }
+
+
+    /* =========================
+       NAVBAR
+    ========================== */
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 9999;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      min-height: 62px;
+      padding: 0 30px;
+
+      background: #0d0d0d;
+      border-bottom: 3px solid #e31b23;
+
+      box-shadow: 0 4px 15px rgba(0,0,0,.25);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      gap: 8px;
+      direction: ltr;
+    }
+
+    .nav-links li {
+      margin: 0;
       position: relative;
-    } 
- 
-    .nav-links a { 
-      display: block; 
- 
-      padding: 18px 16px; 
- 
-      color: white; 
-      text-decoration: none; 
- 
-      font-size: 14px; 
-      font-weight: bold; 
- 
-      letter-spacing: .5px; 
- 
-      transition: .25s; 
-    } 
- 
-    .nav-links a:hover { 
-      color: #ff3434; 
-      background: rgba(255,255,255,.05); 
-    } 
+    }
+
+    .nav-links a {
+      display: block;
+
+      padding: 18px 16px;
+
+      color: white;
+      text-decoration: none;
+
+      font-size: 14px;
+      font-weight: bold;
+
+      letter-spacing: .5px;
+
+      transition: .25s;
+    }
+
+    .nav-links a:hover {
+      color: #ff3434;
+      background: rgba(255,255,255,.05);
+    }
 
 
     /* =========================
@@ -140,267 +140,565 @@
     .dropdown:hover .dropdown-content {
       display: block;
     }
- 
- 
-    /* ========================= 
-       HEADER 
-    ========================== */ 
- 
-    header { 
-      background: linear-gradient(135deg, #8b0000, #e31b23); 
-      color: white; 
- 
-      padding: 70px 20px; 
- 
-      text-align: center; 
- 
-      position: relative; 
-    } 
- 
-    header h1 { 
-      margin: 0; 
-      font-size: 44px; 
-    } 
- 
-    header p { 
-      font-size: 19px; 
-      margin: 12px 0 0; 
-      color: #d5f6f7; 
-    } 
- 
- 
-    /* ========================= 
-       LEFT LOGO 
-    ========================== */ 
- 
-    .logo-left { 
-      position: absolute; 
- 
-      top: 20px; 
-      left: 40px; 
- 
-      width: 230px; 
-      height: 180px; 
- 
-      object-fit: contain; 
-    } 
- 
- 
-    /* ========================= 
-       RIGHT LOGO 
-    ========================== */ 
- 
-    .logo-right { 
-      position: absolute; 
- 
-      top: 20px; 
-      right: 40px; 
- 
-      width: 230px; 
-      height: 180px; 
- 
-      object-fit: contain; 
-    } 
- 
- 
-    /* ========================= 
-       MAIN CONTENT 
-    ========================== */ 
- 
-    main { 
-      max-width: 1100px; 
-      margin: auto; 
-      padding: 35px 20px 60px; 
-    } 
- 
-    section { 
-      scroll-margin-top: 85px; 
-    } 
- 
-    h2 { 
-      color: #09395c; 
-      margin-top: 35px; 
-    } 
- 
- 
-    /* ========================= 
-       GRID 
-    ========================== */ 
- 
-    .grid { 
-      display: grid; 
- 
-      grid-template-columns: 
-      repeat(auto-fit, minmax(220px, 1fr)); 
- 
-      gap: 18px; 
-    } 
- 
- 
-    /* ========================= 
-       CARDS 
-    ========================== */ 
- 
-    .card { 
-      background: white; 
- 
-      border-radius: 14px; 
- 
-      padding: 22px; 
- 
-      box-shadow: 0 5px 18px rgba(0,0,0,.08); 
- 
-      border-top: 5px solid #0a7582; 
- 
-      transition: .3s; 
-    } 
- 
-    .card:hover { 
-      transform: translateY(-5px); 
-      box-shadow: 0 10px 24px rgba(0,0,0,.13); 
-    } 
- 
-    .card h3 { 
-      margin-top: 0; 
-      color: #09395c; 
-    } 
- 
- 
-    /* ========================= 
-       QUESTIONS 
-    ========================== */ 
- 
-    details { 
-      background: white; 
- 
-      margin: 12px 0; 
- 
-      padding: 16px 20px; 
- 
-      border-radius: 10px; 
- 
-      box-shadow: 0 3px 12px rgba(0,0,0,.06); 
-    } 
- 
-    summary { 
-      cursor: pointer; 
- 
-      font-weight: bold; 
- 
-      color: #09395c; 
-    } 
- 
- 
-    /* ========================= 
-       TERMS 
-    ========================== */ 
- 
-    .term { 
-      background: #e5f6f6; 
- 
-      padding: 15px; 
- 
-      border-right: 5px solid #0a7582; 
- 
-      margin: 10px 0; 
- 
-      border-radius: 7px; 
-    } 
- 
- 
-    /* ========================= 
-       FOOTER 
-    ========================== */ 
- 
-    footer { 
-      text-align: center; 
- 
-      padding: 25px; 
- 
-      color: #6b7280; 
-    } 
- 
- 
-    /* ========================= 
-       MOBILE 
-    ========================== */ 
- 
-    @media (max-width: 750px) { 
- 
-      .navbar { 
-        overflow-x: auto; 
-        justify-content: flex-start; 
-        padding: 0 10px; 
-      } 
- 
-      .nav-links { 
-        flex-wrap: nowrap; 
-        justify-content: flex-start; 
-      } 
- 
-      .nav-links a { 
-        white-space: nowrap; 
-        padding: 15px 12px; 
-        font-size: 12px; 
-      } 
 
+
+    /* =========================
+       HEADER
+    ========================== */
+
+    header {
+      background: linear-gradient(135deg, #8b0000, #e31b23);
+      color: white;
+
+      padding: 70px 20px;
+
+      text-align: center;
+
+      position: relative;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 44px;
+    }
+
+    header p {
+      font-size: 19px;
+      margin: 12px 0 0;
+      color: #d5f6f7;
+    }
+
+
+    /* =========================
+       LEFT LOGO
+    ========================== */
+
+    .logo-left {
+      position: absolute;
+
+      top: 20px;
+      left: 40px;
+
+      width: 230px;
+      height: 180px;
+
+      object-fit: contain;
+    }
+
+
+    /* =========================
+       RIGHT LOGO
+    ========================== */
+
+    .logo-right {
+      position: absolute;
+
+      top: 20px;
+      right: 40px;
+
+      width: 230px;
+      height: 180px;
+
+      object-fit: contain;
+    }
+
+
+    /* =========================
+       MAIN CONTENT
+    ========================== */
+
+    main {
+      max-width: 1100px;
+      margin: auto;
+      padding: 35px 20px 60px;
+    }
+
+    section {
+      scroll-margin-top: 85px;
+    }
+
+    h2 {
+      color: #09395c;
+      margin-top: 35px;
+    }
+
+
+    /* =========================
+       INTERACTIVE GENERATOR
+    ========================== */
+
+    .generator-showcase {
+      position: relative;
+
+      width: 100%;
+
+      margin: 0 auto 55px;
+
+      padding: 38px 20px 32px;
+
+      text-align: center;
+
+      background:
+        linear-gradient(
+          180deg,
+          #ffffff 0%,
+          #fafafa 100%
+        );
+
+      border-radius: 20px;
+
+      border: 1px solid #e7e7e7;
+
+      box-shadow:
+        0 10px 35px rgba(0,0,0,.08);
+
+      overflow: hidden;
+    }
+
+
+    .generator-showcase::before {
+      content: "";
+
+      position: absolute;
+
+      top: 0;
+      left: 0;
+
+      width: 100%;
+      height: 4px;
+
+      background:
+        linear-gradient(
+          90deg,
+          #500000,
+          #e31b23,
+          #ff3b34,
+          #e31b23,
+          #500000
+        );
+    }
+
+
+    .generator-small-title {
+      display: inline-block;
+
+      margin-bottom: 7px;
+
+      padding: 5px 13px;
+
+      border-radius: 20px;
+
+      background: rgba(227, 27, 35, .08);
+
+      border: 1px solid rgba(227, 27, 35, .15);
+
+      color: #e31b23;
+
+      font-size: 10px;
+      font-weight: bold;
+
+      letter-spacing: 2px;
+
+      direction: ltr;
+    }
+
+
+    .generator-showcase h2 {
+      margin: 4px 0 7px;
+
+      color: #111;
+
+      font-size: 34px;
+
+      line-height: 1.2;
+
+      letter-spacing: -1px;
+
+      direction: ltr;
+    }
+
+
+    .generator-showcase h2 span {
+      color: #e31b23;
+    }
+
+
+    .generator-description {
+      margin: 0 auto 15px;
+
+      max-width: 650px;
+
+      color: #737981;
+
+      font-size: 14px;
+
+      direction: ltr;
+    }
+
+
+    /* =========================
+       GENERATOR WRAPPER
+    ========================== */
+
+    .generator-wrapper {
+      position: relative;
+
+      width: 100%;
+
+      max-width: 1050px;
+
+      min-height: 470px;
+
+      margin: 10px auto 0;
+
+      display: flex;
+
+      justify-content: center;
+      align-items: center;
+    }
+
+
+    .generator-wrapper::after {
+      content: "";
+
+      position: absolute;
+
+      left: 50%;
+      bottom: 28px;
+
+      transform: translateX(-50%);
+
+      width: 72%;
+      height: 35px;
+
+      border-radius: 50%;
+
+      background: rgba(0,0,0,.14);
+
+      filter: blur(22px);
+
+      z-index: 0;
+    }
+
+
+    /* =========================
+       GENERATOR IMAGE
+    ========================== */
+
+    .generator-image {
+      position: relative;
+
+      z-index: 2;
+
+      display: block;
+
+      width: 100%;
+
+      max-width: 1030px;
+
+      height: auto;
+
+      max-height: 520px;
+
+      object-fit: contain;
+
+      margin: auto;
+
+      transition:
+        transform .35s ease,
+        filter .35s ease;
+
+      filter:
+        drop-shadow(
+          0 18px 18px
+          rgba(0,0,0,.16)
+        );
+    }
+
+
+    .generator-image:hover {
+      transform: scale(1.015);
+
+      filter:
+        drop-shadow(
+          0 22px 22px
+          rgba(0,0,0,.20)
+        );
+    }
+
+
+    /* =========================
+       GENERATOR HELP TEXT
+    ========================== */
+
+    .generator-help {
+      display: inline-flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      gap: 8px;
+
+      margin-top: 5px;
+
+      padding: 8px 16px;
+
+      border-radius: 30px;
+
+      background: #f6f6f6;
+
+      border: 1px solid #e5e5e5;
+
+      color: #747474;
+
+      font-size: 11px;
+
+      direction: ltr;
+    }
+
+
+    .generator-help-dot {
+      width: 8px;
+      height: 8px;
+
+      border-radius: 50%;
+
+      background: #e31b23;
+
+      box-shadow:
+        0 0 0 4px
+        rgba(227,27,35,.10);
+    }
+
+
+    /* =========================
+       GRID
+    ========================== */
+
+    .grid {
+      display: grid;
+
+      grid-template-columns:
+      repeat(auto-fit, minmax(220px, 1fr));
+
+      gap: 18px;
+    }
+
+
+    /* =========================
+       CARDS
+    ========================== */
+
+    .card {
+      background: white;
+
+      border-radius: 14px;
+
+      padding: 22px;
+
+      box-shadow: 0 5px 18px rgba(0,0,0,.08);
+
+      border-top: 5px solid #0a7582;
+
+      transition: .3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 24px rgba(0,0,0,.13);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: #09395c;
+    }
+
+
+    /* =========================
+       QUESTIONS
+    ========================== */
+
+    details {
+      background: white;
+
+      margin: 12px 0;
+
+      padding: 16px 20px;
+
+      border-radius: 10px;
+
+      box-shadow: 0 3px 12px rgba(0,0,0,.06);
+    }
+
+    summary {
+      cursor: pointer;
+
+      font-weight: bold;
+
+      color: #09395c;
+    }
+
+
+    /* =========================
+       TERMS
+    ========================== */
+
+    .term {
+      background: #e5f6f6;
+
+      padding: 15px;
+
+      border-right: 5px solid #0a7582;
+
+      margin: 10px 0;
+
+      border-radius: 7px;
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    footer {
+      text-align: center;
+
+      padding: 25px;
+
+      color: #6b7280;
+    }
+
+
+    /* =========================
+       MOBILE
+    ========================== */
+
+    @media (max-width: 750px) {
+
+      .navbar {
+        overflow-x: auto;
+        justify-content: flex-start;
+        padding: 0 10px;
+      }
+
+      .nav-links {
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+      }
+
+      .nav-links a {
+        white-space: nowrap;
+        padding: 15px 12px;
+        font-size: 12px;
+      }
 
       .dropdown-content {
         min-width: 210px;
       }
- 
- 
-      header { 
-        padding: 100px 20px 55px; 
-      } 
- 
-      header h1 { 
-        font-size: 30px; 
-      } 
- 
-      header p { 
-        font-size: 16px; 
-      } 
- 
- 
-      .logo-left { 
-        width: 75px; 
-        height: 75px; 
- 
-        top: 15px; 
-        left: 15px; 
-      } 
- 
- 
-      .logo-right { 
-        width: 75px; 
-        height: 75px; 
- 
-        top: 15px; 
-        right: 15px; 
-      } 
- 
-    } 
- 
-  </style> 
- 
-</head> 
- 
- 
-<body> 
- 
- 
-  <!-- ========================= 
-       NAVBAR 
-  ========================== --> 
- 
-  <nav class="navbar"> 
- 
-    <ul class="nav-links"> 
- 
-      <li> 
-        <a href="#home">HOME</a> 
-      </li> 
+
+
+      header {
+        padding: 100px 20px 55px;
+      }
+
+      header h1 {
+        font-size: 30px;
+      }
+
+      header p {
+        font-size: 16px;
+      }
+
+
+      .logo-left {
+        width: 75px;
+        height: 75px;
+
+        top: 15px;
+        left: 15px;
+      }
+
+
+      .logo-right {
+        width: 75px;
+        height: 75px;
+
+        top: 15px;
+        right: 15px;
+      }
+
+
+      .generator-showcase {
+        padding: 28px 10px 25px;
+
+        border-radius: 14px;
+      }
+
+
+      .generator-showcase h2 {
+        font-size: 26px;
+      }
+
+
+      .generator-description {
+        font-size: 12px;
+      }
+
+
+      .generator-wrapper {
+        min-height: 300px;
+      }
+
+
+      .generator-image {
+        width: 100%;
+
+        max-height: 350px;
+      }
+
+    }
+
+
+    @media (max-width: 450px) {
+
+      .generator-showcase h2 {
+        font-size: 22px;
+      }
+
+
+      .generator-wrapper {
+        min-height: 240px;
+      }
+
+
+      .generator-image {
+        max-height: 290px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <!-- =========================
+       NAVBAR
+  ========================== -->
+
+  <nav class="navbar">
+
+    <ul class="nav-links">
+
+      <li>
+        <a href="#home">
+          HOME
+        </a>
+      </li>
 
 
       <!-- SYSTEMS -->
@@ -456,282 +754,361 @@
         </div>
 
       </li>
- 
- 
-      <li> 
-        <a href="#components"> 
-          COMPONENTS 
-        </a> 
-      </li> 
- 
-      <li> 
-        <a href="#terms"> 
-          TERMS 
-        </a> 
-      </li> 
- 
-      <li> 
-        <a href="#questions"> 
-          QUESTIONS 
-        </a> 
-      </li> 
- 
-      <li> 
-        <a href="about.html"> 
-          ABOUT 
-        </a> 
-      </li> 
- 
-    </ul> 
- 
-  </nav> 
- 
- 
- 
-  <!-- ========================= 
-       HEADER 
-  ========================== --> 
- 
-  <header id="home"> 
- 
-    <img 
-      src="logo.png" 
-      alt="Generator Hub Logo" 
-      class="logo-left" 
-    > 
- 
-    <img 
-      src="LOGO.2.PNG" 
-      alt="Mohanad Logo" 
-      class="logo-right" 
-    > 
- 
- 
-    <h1> 
-      THE WORLD OF GENERATORS 
-    </h1> 
- 
-    <p> 
-      منصة عربية مبسطة لتعلم كل ما يخص مولدات الديزل 
-    </p> 
- 
-  </header> 
- 
- 
- 
-  <!-- ========================= 
-       MAIN 
-  ========================== --> 
- 
-  <main> 
- 
- 
-    <!-- ========================= 
-         COMPONENTS 
-    ========================== --> 
- 
-    <section id="components"> 
- 
-      <h2> 
-        أجزاء المولد الرئيسية 
-      </h2> 
- 
-      <div class="grid"> 
- 
- 
-        <div class="card"> 
- 
-          <h3> 
-            المحرك Engine 
-          </h3> 
- 
-          <p> 
-            يحوّل طاقة الديزل إلى حركة ميكانيكية 
-            لتدوير المولد الكهربائي. 
-          </p> 
- 
-        </div> 
- 
- 
-        <div class="card"> 
- 
-          <h3> 
-            المولد Alternator 
-          </h3> 
- 
-          <p> 
-            يحوّل حركة المحرك إلى كهرباء AC 
-            لتغذية الأحمال. 
-          </p> 
- 
-        </div> 
- 
- 
-        <div class="card"> 
- 
-          <h3> 
-            الرادييتر Radiator 
-          </h3> 
- 
-          <p> 
-            يبرد سائل المحرك ويحافظ على 
-            درجة حرارته ضمن المستوى الآمن. 
-          </p> 
- 
-        </div> 
- 
- 
-        <div class="card"> 
- 
-          <h3> 
-            البطاريات Battery 
-          </h3> 
- 
-          <p> 
-            توفر الطاقة اللازمة لتدوير 
-            السلف وتشغيل المحرك. 
-          </p> 
- 
-        </div> 
- 
- 
-      </div> 
- 
-    </section> 
- 
- 
- 
-    <!-- ========================= 
-         TERMS 
-    ========================== --> 
- 
-    <section id="terms"> 
- 
-      <h2> 
-        مصطلحات مهمة 
-      </h2> 
- 
- 
-      <div class="term"> 
-        <strong>kVA:</strong> 
-        قدرة المولد الظاهرية. 
-      </div> 
- 
- 
-      <div class="term"> 
-        <strong>ATS:</strong> 
-        لوحة التحويل الأوتوماتيكي بين 
-        الكهرباء الرئيسية والمولد. 
-      </div> 
- 
- 
-      <div class="term"> 
-        <strong>CCA:</strong> 
-        قدرة البطارية على إعطاء تيار 
-        تشغيل قوي في الجو البارد. 
-      </div> 
- 
- 
-      <div class="term"> 
-        <strong>CRS:</strong> 
-        جدول الرد على ملاحظات الاستشاري. 
-      </div> 
- 
-    </section> 
- 
- 
- 
-    <!-- ========================= 
-         QUESTIONS 
-    ========================== --> 
- 
-    <section id="questions"> 
- 
-      <h2> 
-        أسئلة وأجوبة 
-      </h2> 
- 
- 
-      <details> 
- 
-        <summary> 
-          ما هو الفرق بين Standby و Prime Power؟ 
-        </summary> 
- 
-        <p> 
-          Standby للطوارئ عند انقطاع الكهرباء، 
-          أما Prime فهو للتشغيل المستمر 
-          أو لفترات طويلة. 
-        </p> 
- 
-      </details> 
- 
- 
-      <details> 
- 
-        <summary> 
-          كيف نحسب سعة خزان الوقود؟ 
-        </summary> 
- 
-        <p> 
-          استهلاك الوقود عند الحمل المطلوب 
-          (لتر/ساعة) × عدد ساعات التشغيل، 
-          ثم نضيف هامش أمان. 
-        </p> 
- 
-      </details> 
- 
- 
-      <details> 
- 
-        <summary> 
-          ما هو الـ Silencer؟ 
-        </summary> 
- 
-        <p> 
-          كاتم صوت العادم، وظيفته تقليل 
-          ضوضاء العادم الخارج من المحرك. 
-        </p> 
- 
-      </details> 
- 
-    </section> 
- 
- 
- 
-    <!-- ========================= 
-         ABOUT 
-    ========================== --> 
- 
-    <section id="about"> 
- 
-      <h2> 
-        عن الموقع 
-      </h2> 
- 
-      <div class="card"> 
- 
-        <p> 
-          THE WORLD OF GENERATORS هو موقع 
-          تعليمي مبسط يهدف إلى شرح أنظمة 
-          ومكونات مولدات الديزل والمصطلحات 
-          الهندسية المتعلقة بها. 
-        </p> 
- 
-      </div> 
- 
-    </section> 
- 
- 
-  </main> 
- 
- 
- 
-  <footer> 
-    © 2026 Generator Hub 
-  </footer> 
- 
- 
-</body> 
- 
+
+
+      <li>
+        <a href="#components">
+          COMPONENTS
+        </a>
+      </li>
+
+      <li>
+        <a href="#terms">
+          TERMS
+        </a>
+      </li>
+
+      <li>
+        <a href="#questions">
+          QUESTIONS
+        </a>
+      </li>
+
+      <li>
+        <a href="about.html">
+          ABOUT
+        </a>
+      </li>
+
+    </ul>
+
+  </nav>
+
+
+
+  <!-- =========================
+       HEADER
+  ========================== -->
+
+  <header id="home">
+
+    <img
+      src="logo.png"
+      alt="Generator Hub Logo"
+      class="logo-left"
+    >
+
+    <img
+      src="LOGO.2.PNG"
+      alt="Mohanad Logo"
+      class="logo-right"
+    >
+
+
+    <h1>
+      THE WORLD OF GENERATORS
+    </h1>
+
+    <p>
+      منصة عربية مبسطة لتعلم كل ما يخص مولدات الديزل
+    </p>
+
+  </header>
+
+
+
+  <!-- =========================
+       MAIN
+  ========================== -->
+
+  <main>
+
+
+    <!-- =========================
+         GENERATOR SHOWCASE
+    ========================== -->
+
+    <section
+      class="generator-showcase"
+      id="generator"
+    >
+
+      <div class="generator-small-title">
+        INTERACTIVE GENERATOR
+      </div>
+
+
+      <h2>
+        EXPLORE
+        <span>
+          GENERATOR SYSTEMS
+        </span>
+      </h2>
+
+
+      <p class="generator-description">
+
+        Explore the main components and systems
+        of a diesel generator set.
+
+      </p>
+
+
+      <div class="generator-wrapper">
+
+        <img
+          src="generator-main.png.png"
+          alt="Diesel Generator Set"
+          class="generator-image"
+        >
+
+      </div>
+
+
+      <div class="generator-help">
+
+        <span class="generator-help-dot"></span>
+
+        Interactive system selection will be added here
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         COMPONENTS
+    ========================== -->
+
+    <section id="components">
+
+      <h2>
+        أجزاء المولد الرئيسية
+      </h2>
+
+      <div class="grid">
+
+
+        <div class="card">
+
+          <h3>
+            المحرك Engine
+          </h3>
+
+          <p>
+            يحوّل طاقة الديزل إلى حركة ميكانيكية
+            لتدوير المولد الكهربائي.
+          </p>
+
+        </div>
+
+
+        <div class="card">
+
+          <h3>
+            المولد Alternator
+          </h3>
+
+          <p>
+            يحوّل حركة المحرك إلى كهرباء AC
+            لتغذية الأحمال.
+          </p>
+
+        </div>
+
+
+        <div class="card">
+
+          <h3>
+            الرادييتر Radiator
+          </h3>
+
+          <p>
+            يبرد سائل المحرك ويحافظ على
+            درجة حرارته ضمن المستوى الآمن.
+          </p>
+
+        </div>
+
+
+        <div class="card">
+
+          <h3>
+            البطاريات Battery
+          </h3>
+
+          <p>
+            توفر الطاقة اللازمة لتدوير
+            السلف وتشغيل المحرك.
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         TERMS
+    ========================== -->
+
+    <section id="terms">
+
+      <h2>
+        مصطلحات مهمة
+      </h2>
+
+
+      <div class="term">
+
+        <strong>
+          kVA:
+        </strong>
+
+        قدرة المولد الظاهرية.
+
+      </div>
+
+
+      <div class="term">
+
+        <strong>
+          ATS:
+        </strong>
+
+        لوحة التحويل الأوتوماتيكي بين
+        الكهرباء الرئيسية والمولد.
+
+      </div>
+
+
+      <div class="term">
+
+        <strong>
+          CCA:
+        </strong>
+
+        قدرة البطارية على إعطاء تيار
+        تشغيل قوي في الجو البارد.
+
+      </div>
+
+
+      <div class="term">
+
+        <strong>
+          CRS:
+        </strong>
+
+        جدول الرد على ملاحظات الاستشاري.
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         QUESTIONS
+    ========================== -->
+
+    <section id="questions">
+
+      <h2>
+        أسئلة وأجوبة
+      </h2>
+
+
+      <details>
+
+        <summary>
+          ما هو الفرق بين Standby و Prime Power؟
+        </summary>
+
+        <p>
+          Standby للطوارئ عند انقطاع الكهرباء،
+          أما Prime فهو للتشغيل المستمر
+          أو لفترات طويلة.
+        </p>
+
+      </details>
+
+
+      <details>
+
+        <summary>
+          كيف نحسب سعة خزان الوقود؟
+        </summary>
+
+        <p>
+          استهلاك الوقود عند الحمل المطلوب
+          (لتر/ساعة) × عدد ساعات التشغيل،
+          ثم نضيف هامش أمان.
+        </p>
+
+      </details>
+
+
+      <details>
+
+        <summary>
+          ما هو الـ Silencer؟
+        </summary>
+
+        <p>
+          كاتم صوت العادم، وظيفته تقليل
+          ضوضاء العادم الخارج من المحرك.
+        </p>
+
+      </details>
+
+    </section>
+
+
+
+    <!-- =========================
+         ABOUT
+    ========================== -->
+
+    <section id="about">
+
+      <h2>
+        عن الموقع
+      </h2>
+
+      <div class="card">
+
+        <p>
+          THE WORLD OF GENERATORS هو موقع
+          تعليمي مبسط يهدف إلى شرح أنظمة
+          ومكونات مولدات الديزل والمصطلحات
+          الهندسية المتعلقة بها.
+        </p>
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer>
+
+    © 2026 Generator Hub
+
+  </footer>
+
+
+</body>
+
 </html>
