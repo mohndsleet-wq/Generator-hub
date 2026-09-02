@@ -14,24 +14,29 @@
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      background: #f4f6f9;
+      background: #eef2f7;
       color: #111;
     }
 
 
-    /* =========================
+    /* =====================================================
        NAVBAR
-    ========================= */
+    ===================================================== */
 
     .navbar {
       position: sticky;
       top: 0;
       z-index: 9999;
 
-      height: 66px;
+      width: 100%;
+      min-height: 67px;
 
       display: flex;
       align-items: center;
@@ -41,20 +46,22 @@
 
       border-bottom: 3px solid #e31b23;
 
-      box-shadow: 0 4px 15px rgba(0,0,0,.25);
+      box-shadow:
+        0 4px 18px rgba(0,0,0,.28);
     }
 
 
     .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      gap: 43px;
+
       list-style: none;
 
       margin: 0;
       padding: 0;
-
-      display: flex;
-      align-items: center;
-
-      gap: 42px;
     }
 
 
@@ -64,17 +71,18 @@
 
 
     .nav-links a {
-      color: white;
-      text-decoration: none;
-
-      font-size: 15px;
-      font-weight: bold;
+      display: block;
 
       padding: 23px 0;
 
-      display: block;
+      color: white;
 
-      transition: .2s;
+      text-decoration: none;
+
+      font-size: 15px;
+      font-weight: 700;
+
+      transition: .2s ease;
     }
 
 
@@ -83,19 +91,19 @@
     }
 
 
-    /* =========================
+    /* =====================================================
        DROPDOWN
-    ========================= */
+    ===================================================== */
 
     .dropdown-menu {
       position: absolute;
 
-      top: 66px;
+      top: 100%;
       left: 50%;
 
       transform: translateX(-50%);
 
-      min-width: 240px;
+      width: 245px;
 
       display: none;
 
@@ -103,7 +111,10 @@
 
       border-top: 3px solid #e31b23;
 
-      box-shadow: 0 15px 30px rgba(0,0,0,.35);
+      box-shadow:
+        0 15px 35px rgba(0,0,0,.4);
+
+      overflow: hidden;
     }
 
 
@@ -117,7 +128,8 @@
 
       font-size: 13px;
 
-      border-bottom: 1px solid rgba(255,255,255,.07);
+      border-bottom:
+        1px solid rgba(255,255,255,.07);
     }
 
 
@@ -127,61 +139,75 @@
     }
 
 
-    /* =========================
-       MAIN PAGE
-    ========================= */
+    /* =====================================================
+       PAGE
+    ===================================================== */
 
     .page {
-      width: min(1150px, 100%);
-      margin: auto;
+      width: min(1180px, 100%);
+      min-height: calc(100vh - 67px);
 
-      min-height: calc(100vh - 66px);
+      margin: 0 auto;
+
+      padding:
+        0 30px 70px;
 
       background: white;
 
-      padding-bottom: 60px;
-
-      box-shadow: 0 0 35px rgba(0,0,0,.08);
+      box-shadow:
+        0 0 40px rgba(0,0,0,.08);
     }
 
 
-    /* =========================
-       HEADER
-    ========================= */
+    /* =====================================================
+       HERO
+    ===================================================== */
 
     .hero {
       text-align: center;
 
-      padding: 0 20px 20px;
+      padding:
+        0 20px 22px;
     }
 
 
-    .tag {
-      display: inline-block;
+    .hero-tag {
+      display: inline-flex;
 
-      padding: 7px 17px;
+      align-items: center;
+      justify-content: center;
 
-      border-radius: 0 0 20px 20px;
+      padding:
+        8px 18px;
 
-      background: rgba(227,27,35,.08);
+      border-radius:
+        0 0 22px 22px;
 
-      border: 1px solid rgba(227,27,35,.20);
+      background:
+        rgba(227,27,35,.07);
+
+      border:
+        1px solid rgba(227,27,35,.20);
 
       color: #e31b23;
 
       font-size: 11px;
-      font-weight: bold;
+      font-weight: 700;
 
       letter-spacing: 2px;
     }
 
 
     .hero h1 {
-      margin: 16px 0 8px;
+      margin:
+        23px 0 9px;
 
-      font-size: 38px;
+      font-size:
+        clamp(30px, 4vw, 42px);
 
-      font-weight: 800;
+      line-height: 1.05;
+
+      font-weight: 900;
     }
 
 
@@ -193,240 +219,384 @@
     .hero p {
       margin: 0;
 
-      color: #777;
+      color: #6e747b;
 
       font-size: 15px;
     }
 
 
-    /* =========================
-       GENERATOR AREA
-    ========================= */
+    /* =====================================================
+       GENERATOR CARD
+    ===================================================== */
 
-    .generator-area {
-      width: min(950px, 94%);
+    .generator-card {
+      width: min(1000px, 100%);
 
       margin: 0 auto;
 
-      position: relative;
+      padding: 20px;
 
-      background: white;
+      border-radius: 22px;
 
-      box-shadow: 0 14px 40px rgba(0,0,0,.15);
+      background:
+        linear-gradient(
+          145deg,
+          #ffffff,
+          #f5f7f9
+        );
+
+      border:
+        1px solid #e5e5e5;
+
+      box-shadow:
+        0 20px 50px rgba(0,0,0,.12);
     }
 
 
-    .generator-image {
+    /* =====================================================
+       GENERATOR WRAPPER
+    ===================================================== */
+
+    .generator-wrapper {
+      position: relative;
+
       width: 100%;
-      height: auto;
+
+      min-height: 400px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      overflow: hidden;
+
+      border-radius: 16px;
+
+      background:
+        radial-gradient(
+          circle at center,
+          #ffffff 0%,
+          #f4f5f7 70%,
+          #eceff2 100%
+        );
+    }
+
+
+    /* =====================================================
+       GENERATOR IMAGE
+    ===================================================== */
+
+    .generator-image {
+      position: relative;
+      z-index: 1;
 
       display: block;
 
-      position: relative;
+      width: 100%;
+      height: auto;
 
-      z-index: 1;
+      max-height: 690px;
+
+      object-fit: contain;
 
       user-select: none;
+
+      -webkit-user-drag: none;
+
+      opacity: 0;
+
+      transition:
+        opacity .3s ease;
     }
 
 
-    /* =========================
-       HOTSPOTS
-    ========================= */
+    .generator-image.loaded {
+      opacity: 1;
+    }
 
-    .point {
+
+    /* =====================================================
+       LOADING
+    ===================================================== */
+
+    .loading {
       position: absolute;
 
-      z-index: 100;
+      z-index: 2;
 
-      width: 34px;
-      height: 34px;
+      left: 50%;
+      top: 50%;
+
+      transform:
+        translate(-50%, -50%);
+
+      color: #777;
+
+      font-size: 14px;
+
+      text-align: center;
+    }
+
+
+    .loading strong {
+      display: block;
+
+      margin-bottom: 8px;
+
+      color: #e31b23;
+
+      font-size: 17px;
+    }
+
+
+    /* =====================================================
+       HOTSPOT LAYER
+
+       مخفية إلى أن تفتح الصورة
+    ===================================================== */
+
+    .hotspot-layer {
+      position: absolute;
+
+      inset: 0;
+
+      z-index: 50;
+
+      display: none;
+    }
+
+
+    .hotspot-layer.active {
+      display: block;
+    }
+
+
+    /* =====================================================
+       HOTSPOTS
+    ===================================================== */
+
+    .hotspot {
+      position: absolute;
+
+      width: 32px;
+      height: 32px;
+
+      transform:
+        translate(-50%, -50%);
 
       border-radius: 50%;
 
       background: #e31b23;
 
-      border: 4px solid white;
+      border: 3px solid white;
 
-      transform: translate(-50%, -50%);
+      box-shadow:
+
+        0 0 0 7px
+        rgba(227,27,35,.15),
+
+        0 0 22px
+        rgba(227,27,35,.90);
 
       cursor: pointer;
 
       text-decoration: none;
 
-      box-shadow:
-        0 0 0 7px rgba(227,27,35,.18),
-        0 0 22px rgba(227,27,35,.9);
-
-      transition: .2s;
+      transition:
+        .2s ease;
     }
 
 
-    .point:hover {
+    .hotspot:hover {
       transform:
         translate(-50%, -50%)
-        scale(1.25);
+        scale(1.28);
 
-      background: #ff2118;
+      background: #ff2018;
 
       box-shadow:
-        0 0 0 10px rgba(227,27,35,.18),
-        0 0 30px rgba(227,27,35,1);
+
+        0 0 0 9px
+        rgba(227,27,35,.17),
+
+        0 0 30px
+        rgba(227,27,35,1);
     }
 
 
-    /* center */
+    /* white center */
 
-    .point::before {
+    .hotspot::before {
       content: "";
 
       position: absolute;
 
-      width: 8px;
-      height: 8px;
-
-      background: white;
-
-      border-radius: 50%;
-
       left: 50%;
       top: 50%;
 
-      transform: translate(-50%, -50%);
+      width: 8px;
+      height: 8px;
+
+      transform:
+        translate(-50%, -50%);
+
+      border-radius: 50%;
+
+      background: white;
     }
 
 
     /* pulse */
 
-    .point::after {
+    .hotspot::after {
       content: "";
 
       position: absolute;
 
-      inset: -12px;
+      inset: -11px;
 
       border-radius: 50%;
 
-      border: 2px solid rgba(227,27,35,.65);
+      border:
+        2px solid rgba(227,27,35,.60);
 
-      animation: pulse 1.5s infinite;
+      animation:
+        hotspotPulse 1.6s infinite;
+
+      pointer-events: none;
     }
 
 
-    @keyframes pulse {
+    @keyframes hotspotPulse {
 
       0% {
-        transform: scale(.6);
+        transform: scale(.65);
         opacity: 1;
       }
 
       100% {
-        transform: scale(1.5);
+        transform: scale(1.6);
         opacity: 0;
       }
 
     }
 
 
-    /* =========================
-       LABEL
-    ========================= */
+    /* =====================================================
+       HOTSPOT LABEL
+    ===================================================== */
 
-    .point span {
+    .hotspot span {
       position: absolute;
 
       left: 50%;
-      bottom: 48px;
+      bottom: 47px;
 
-      transform: translateX(-50%);
+      transform:
+        translateX(-50%)
+        translateY(8px);
 
       min-width: max-content;
 
-      padding: 9px 12px;
+      padding:
+        9px 13px;
 
       border-radius: 7px;
 
-      background: #111;
+      background:
+        rgba(10,10,10,.96);
 
-      border: 1px solid #e31b23;
+      border:
+        1px solid rgba(227,27,35,.55);
 
       color: white;
 
       font-size: 11px;
-      font-weight: bold;
+      font-weight: 700;
 
       white-space: nowrap;
 
       opacity: 0;
+
       visibility: hidden;
 
       pointer-events: none;
 
-      transition: .2s;
+      box-shadow:
+        0 10px 25px rgba(0,0,0,.35);
+
+      transition:
+        .2s ease;
     }
 
 
-    .point:hover span {
+    .hotspot:hover span {
       opacity: 1;
+
       visibility: visible;
+
+      transform:
+        translateX(-50%)
+        translateY(0);
     }
 
 
-    /* =================================================
+    /* =====================================================
        LOCATIONS
-       هاي الأماكن مضبوطة على صورة المولد اللي عندك
-    ================================================= */
+
+       هاي الأماكن على المولد اللي كان ظاهر عندك
+    ===================================================== */
 
 
-    /* Radiator */
+    /* RADIATOR */
 
     .cooling {
-      left: 19%;
-      top: 47%;
+      left: 20%;
+      top: 48%;
     }
 
 
-    /* Engine */
+    /* ENGINE */
 
     .engine {
-      left: 44%;
-      top: 51%;
+      left: 43%;
+      top: 52%;
     }
 
 
-    /* Exhaust Silencer */
+    /* SILENCER */
 
     .exhaust {
       left: 48%;
-      top: 15%;
+      top: 17%;
     }
 
 
-    /* Air Filter */
+    /* AIR FILTER */
 
-    .air {
-      left: 63%;
-      top: 30%;
+    .air-intake {
+      left: 64%;
+      top: 31%;
     }
 
 
-    /* Fuel Filters */
+    /* FUEL FILTERS */
 
     .fuel {
-      left: 47%;
+      left: 48%;
       top: 68%;
     }
 
 
-    /* Lubrication / Oil */
+    /* ENGINE OIL AREA */
 
-    .oil {
-      left: 38%;
+    .lubrication {
+      left: 39%;
       top: 63%;
     }
 
 
-    /* Starter / Battery */
+    /* BATTERIES */
 
     .starting {
       left: 72%;
@@ -434,23 +604,23 @@
     }
 
 
-    /* Charging */
+    /* CHARGING AREA */
 
     .charging {
-      left: 51%;
-      top: 49%;
+      left: 54%;
+      top: 48%;
     }
 
 
-    /* Alternator */
+    /* ALTERNATOR */
 
     .alternator {
       left: 70%;
-      top: 55%;
+      top: 56%;
     }
 
 
-    /* Controller */
+    /* CONTROLLER */
 
     .control {
       left: 82%;
@@ -458,79 +628,96 @@
     }
 
 
-    /* =========================
-       HELP TEXT
-    ========================= */
+    /* =====================================================
+       HELP
+    ===================================================== */
 
     .help {
-      margin-top: 25px;
+      display: flex;
 
-      text-align: center;
+      align-items: center;
+      justify-content: center;
 
-      color: #777;
+      gap: 9px;
 
-      font-size: 13px;
+      margin-top: 23px;
+
+      color: #747474;
+
+      font-size: 12px;
     }
 
 
-    .help span {
-      display: inline-block;
-
+    .help-dot {
       width: 9px;
       height: 9px;
-
-      margin-right: 7px;
 
       border-radius: 50%;
 
       background: #e31b23;
 
-      box-shadow: 0 0 9px rgba(227,27,35,.8);
+      box-shadow:
+        0 0 10px rgba(227,27,35,.75);
     }
 
 
-    /* =========================
+    /* =====================================================
        MOBILE
-    ========================= */
+    ===================================================== */
 
-    @media (max-width: 750px) {
+    @media (max-width: 800px) {
 
       .nav-links {
-        gap: 18px;
+        gap: 20px;
       }
-
 
       .nav-links a {
-        font-size: 11px;
+        font-size: 12px;
       }
 
-
-      .hero h1 {
-        font-size: 29px;
+      .page {
+        padding:
+          0 8px 50px;
       }
 
+      .generator-card {
+        padding: 8px;
+      }
 
-      .point {
-        width: 25px;
-        height: 25px;
+      .generator-wrapper {
+        min-height: 250px;
+      }
+
+      .hotspot {
+        width: 24px;
+        height: 24px;
 
         border-width: 2px;
       }
 
-
-      .point::before {
-        width: 6px;
-        height: 6px;
-      }
-
-
-      .point::after {
+      .hotspot::after {
         inset: -8px;
       }
 
-
-      .point span {
+      .hotspot span {
         display: none;
+      }
+
+    }
+
+
+    @media (max-width: 550px) {
+
+      .nav-links {
+        gap: 13px;
+      }
+
+      .nav-links a {
+        font-size: 10px;
+      }
+
+      .hero h1 {
+        font-size: 27px;
       }
 
     }
@@ -543,21 +730,18 @@
 <body>
 
 
-  <!-- =========================
+  <!-- =====================================================
        NAVBAR
-  ========================= -->
+  ====================================================== -->
 
   <nav class="navbar">
 
     <ul class="nav-links">
 
-
       <li>
-
         <a href="index.html">
           HOME
         </a>
-
       </li>
 
 
@@ -608,40 +792,31 @@
 
 
       <li>
-
         <a href="components.html">
           COMPONENTS
         </a>
-
       </li>
 
 
       <li>
-
         <a href="terms.html">
           TERMS
         </a>
-
       </li>
 
 
       <li>
-
         <a href="questions.html">
           QUESTIONS
         </a>
-
       </li>
 
 
       <li>
-
         <a href="about.html">
           ABOUT
         </a>
-
       </li>
-
 
     </ul>
 
@@ -649,19 +824,19 @@
 
 
 
-  <!-- =========================
-       PAGE
-  ========================= -->
+  <!-- =====================================================
+       MAIN PAGE
+  ====================================================== -->
 
   <main class="page">
 
 
-    <!-- HEADER -->
+    <!-- HERO -->
 
     <section class="hero">
 
 
-      <div class="tag">
+      <div class="hero-tag">
         INTERACTIVE GENERATOR
       </div>
 
@@ -689,199 +864,385 @@
 
 
 
-    <!-- =========================
-         GENERATOR
-    ========================= -->
+    <!-- ===================================================
+         GENERATOR CARD
+    ==================================================== -->
 
-    <div class="generator-area">
+    <section class="generator-card">
 
 
-      <!--
-        مهم:
-        صورة المولد لازم اسمها generator.png
-      -->
-
-      <img
-        src="generator.png"
-        class="generator-image"
-        alt="Diesel Generator"
+      <div
+        class="generator-wrapper"
+        id="generatorWrapper"
       >
 
 
+        <!-- LOADING -->
 
-      <!-- COOLING -->
+        <div
+          class="loading"
+          id="loadingMessage"
+        >
 
-      <a
-        href="cooling-system.html"
-        class="point cooling"
-        title="Cooling System"
-      >
+          <strong>
+            Loading Generator...
+          </strong>
 
-        <span>
-          COOLING SYSTEM
-        </span>
+          Interactive Generator System
 
-      </a>
+        </div>
 
 
 
-      <!-- ENGINE -->
+        <!-- =================================================
+             IMAGE
 
-      <a
-        href="engine-system.html"
-        class="point engine"
-        title="Engine System"
-      >
+             لا تغير هذا.
+             الكود تحت رح يجرب عدة أسماء تلقائياً.
+        ================================================== -->
 
-        <span>
-          ENGINE SYSTEM
-        </span>
+        <img
+          id="generatorImage"
+          class="generator-image"
+          alt="Generator Set"
+        >
 
-      </a>
 
 
+        <!-- =================================================
+             CLICKABLE AREAS
+        ================================================== -->
 
-      <!-- EXHAUST -->
+        <div
+          class="hotspot-layer"
+          id="hotspotLayer"
+        >
 
-      <a
-        href="exhaust-system.html"
-        class="point exhaust"
-        title="Exhaust System"
-      >
 
-        <span>
-          EXHAUST SYSTEM
-        </span>
+          <!-- COOLING -->
 
-      </a>
+          <a
+            href="cooling-system.html"
+            class="hotspot cooling"
+          >
 
+            <span>
+              COOLING SYSTEM
+            </span>
 
+          </a>
 
-      <!-- AIR INTAKE -->
 
-      <a
-        href="air-intake-system.html"
-        class="point air"
-        title="Air Intake System"
-      >
 
-        <span>
-          AIR INTAKE SYSTEM
-        </span>
+          <!-- ENGINE -->
 
-      </a>
+          <a
+            href="engine-system.html"
+            class="hotspot engine"
+          >
 
+            <span>
+              ENGINE SYSTEM
+            </span>
 
+          </a>
 
-      <!-- FUEL -->
 
-      <a
-        href="fuel-system.html"
-        class="point fuel"
-        title="Fuel System"
-      >
 
-        <span>
-          FUEL SYSTEM
-        </span>
+          <!-- EXHAUST -->
 
-      </a>
+          <a
+            href="exhaust-system.html"
+            class="hotspot exhaust"
+          >
 
+            <span>
+              EXHAUST SYSTEM
+            </span>
 
+          </a>
 
-      <!-- LUBRICATION -->
 
-      <a
-        href="lubrication-system.html"
-        class="point oil"
-        title="Lubrication System"
-      >
 
-        <span>
-          LUBRICATION SYSTEM
-        </span>
+          <!-- AIR INTAKE -->
 
-      </a>
+          <a
+            href="air-intake-system.html"
+            class="hotspot air-intake"
+          >
 
+            <span>
+              AIR INTAKE SYSTEM
+            </span>
 
+          </a>
 
-      <!-- STARTING -->
 
-      <a
-        href="starting-system.html"
-        class="point starting"
-        title="Starting System"
-      >
 
-        <span>
-          STARTING SYSTEM
-        </span>
+          <!-- FUEL -->
 
-      </a>
+          <a
+            href="fuel-system.html"
+            class="hotspot fuel"
+          >
 
+            <span>
+              FUEL SYSTEM
+            </span>
 
+          </a>
 
-      <!-- CHARGING -->
 
-      <a
-        href="charging-system.html"
-        class="point charging"
-        title="Charging System"
-      >
 
-        <span>
-          CHARGING SYSTEM
-        </span>
+          <!-- LUBRICATION -->
 
-      </a>
+          <a
+            href="lubrication-system.html"
+            class="hotspot lubrication"
+          >
 
+            <span>
+              LUBRICATION SYSTEM
+            </span>
 
+          </a>
 
-      <!-- ALTERNATOR -->
 
-      <a
-        href="alternator-system.html"
-        class="point alternator"
-        title="Alternator"
-      >
 
-        <span>
-          ALTERNATOR
-        </span>
+          <!-- STARTING -->
 
-      </a>
+          <a
+            href="starting-system.html"
+            class="hotspot starting"
+          >
 
+            <span>
+              STARTING SYSTEM
+            </span>
 
+          </a>
 
-      <!-- CONTROL -->
 
-      <a
-        href="control-system.html"
-        class="point control"
-        title="Control System"
-      >
 
-        <span>
-          CONTROL SYSTEM
-        </span>
+          <!-- CHARGING -->
 
-      </a>
+          <a
+            href="charging-system.html"
+            class="hotspot charging"
+          >
 
+            <span>
+              CHARGING SYSTEM
+            </span>
 
-    </div>
+          </a>
 
 
 
-    <div class="help">
+          <!-- ALTERNATOR -->
 
-      <span></span>
+          <a
+            href="alternator-system.html"
+            class="hotspot alternator"
+          >
 
-      Click any red point to open the related generator system
+            <span>
+              ALTERNATOR
+            </span>
 
-    </div>
+          </a>
+
+
+
+          <!-- CONTROL -->
+
+          <a
+            href="control-system.html"
+            class="hotspot control"
+          >
+
+            <span>
+              CONTROL SYSTEM
+            </span>
+
+          </a>
+
+
+        </div>
+
+
+      </div>
+
+
+
+      <!-- HELP -->
+
+      <div class="help">
+
+        <span class="help-dot"></span>
+
+        Click any highlighted component to open its system
+
+      </div>
+
+
+    </section>
 
 
   </main>
+
+
+
+  <!-- =====================================================
+       IMAGE AUTO DETECTION
+  ====================================================== -->
+
+  <script>
+
+    const generatorImage =
+      document.getElementById(
+        "generatorImage"
+      );
+
+
+    const hotspotLayer =
+      document.getElementById(
+        "hotspotLayer"
+      );
+
+
+    const loadingMessage =
+      document.getElementById(
+        "loadingMessage"
+      );
+
+
+    /*
+      الكود رح يجرب أسماء الصور هدول بالترتيب.
+
+      يعني مش لازم نعرف حالياً هل الصورة
+      PNG أو JPG.
+    */
+
+    const possibleImages = [
+
+      "generator.jpg",
+
+      "generator.png",
+
+      "Generator.jpg",
+
+      "Generator.png",
+
+      "genset.jpg",
+
+      "genset.png",
+
+      "generator-set.jpg",
+
+      "generator-set.png"
+
+    ];
+
+
+    let imageIndex = 0;
+
+
+
+    function tryNextImage() {
+
+
+      if (
+        imageIndex >=
+        possibleImages.length
+      ) {
+
+
+        loadingMessage.innerHTML = `
+
+          <strong>
+            Generator Image Not Found
+          </strong>
+
+          Upload the generator image to the same folder
+          as generator.htm.
+
+        `;
+
+
+        return;
+
+      }
+
+
+      generatorImage.src =
+        possibleImages[
+          imageIndex
+        ];
+
+
+      imageIndex++;
+
+    }
+
+
+
+    generatorImage.addEventListener(
+
+      "load",
+
+      function () {
+
+
+        generatorImage.classList.add(
+          "loaded"
+        );
+
+
+        hotspotLayer.classList.add(
+          "active"
+        );
+
+
+        loadingMessage.style.display =
+          "none";
+
+
+      }
+
+    );
+
+
+
+    generatorImage.addEventListener(
+
+      "error",
+
+      function () {
+
+
+        generatorImage.classList.remove(
+          "loaded"
+        );
+
+
+        hotspotLayer.classList.remove(
+          "active"
+        );
+
+
+        tryNextImage();
+
+
+      }
+
+    );
+
+
+
+    tryNextImage();
+
+  </script>
 
 
 </body>
