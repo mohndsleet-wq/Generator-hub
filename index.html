@@ -1,452 +1,1964 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mohanad Sleet | Engineering Hub</title>
+
+  <title>Mohanad | Application Engineering Journey</title>
 
   <style>
-    :root {
-      --ink: #15100c;
-      --brown: #2a1e15;
-      --gold: #c99b5b;
-      --cream: #f3eee7;
-      --muted: #aa9d90;
-      --line: rgba(255, 255, 255, .15);
-    }
+    /* ================================
+       GLOBAL
+    ================================= */
 
     * {
+      margin: 0;
+      padding: 0;
       box-sizing: border-box;
-    }
-
-    html {
       scroll-behavior: smooth;
     }
 
-    body {
-      margin: 0;
-      color: var(--ink);
-      background: var(--cream);
-      font-family: Arial, Helvetica, sans-serif;
+    :root {
+      --red: #e31837;
+      --dark-red: #9f1024;
+      --black: #08090b;
+      --black-2: #0f1115;
+      --black-3: #171a20;
+      --card: #11141a;
+      --border: rgba(255, 255, 255, 0.08);
+      --text: #ffffff;
+      --muted: #9da4af;
+      --green: #3ddc97;
     }
 
+    body {
+      background:
+        radial-gradient(circle at 15% 10%, rgba(227, 24, 55, 0.10), transparent 30%),
+        radial-gradient(circle at 85% 40%, rgba(227, 24, 55, 0.05), transparent 35%),
+        var(--black);
+
+      color: var(--text);
+      font-family: "Segoe UI", Arial, sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button {
+      font-family: inherit;
+    }
+
+    .container {
+      width: min(1180px, 92%);
+      margin: auto;
+    }
+
+    .section {
+      padding: 110px 0;
+    }
+
+    .eyebrow {
+      color: var(--red);
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font-weight: 700;
+      font-size: 12px;
+      margin-bottom: 14px;
+    }
+
+    .section-title {
+      font-size: clamp(34px, 5vw, 60px);
+      line-height: 1.05;
+      margin-bottom: 18px;
+      letter-spacing: -2px;
+    }
+
+    .section-title span {
+      color: var(--red);
+    }
+
+    .section-description {
+      max-width: 720px;
+      color: var(--muted);
+      font-size: 17px;
+      margin-bottom: 45px;
+    }
+
+    /* ================================
+       NAVBAR
+    ================================= */
+
     .navbar {
-      position: absolute;
+      position: fixed;
       top: 0;
       left: 0;
-      z-index: 10;
       width: 100%;
+      height: 78px;
+      z-index: 1000;
+
+      background: rgba(8, 9, 11, 0.88);
+      backdrop-filter: blur(16px);
+
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      height: 100%;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 25px 7%;
-      border-bottom: 1px solid var(--line);
+      gap: 30px;
     }
 
     .brand {
       display: flex;
       align-items: center;
-      gap: 11px;
-      color: #fff;
-      text-decoration: none;
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 1.7px;
+      gap: 13px;
     }
 
-    .brand-mark {
-      width: 34px;
-      height: 34px;
-      display: grid;
-      place-items: center;
-      border: 1px solid rgba(224, 194, 145, .8);
-      border-radius: 50%;
-      color: #e5c895;
-      font-size: 10px;
+    .brand-logo {
+      width: 44px;
+      height: 44px;
+      object-fit: contain;
+    }
+
+    .brand-text strong {
+      display: block;
+      font-size: 15px;
+      letter-spacing: 1px;
+    }
+
+    .brand-text span {
+      font-size: 11px;
+      color: var(--muted);
     }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 22px;
-      list-style: none;
-      margin: 0;
-      padding: 0;
+      gap: 25px;
     }
 
     .nav-links a {
-      color: rgba(255, 255, 255, .75);
-      text-decoration: none;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      transition: .2s ease;
+      color: #c4c8cf;
+      font-size: 13px;
+      font-weight: 600;
+      transition: 0.25s;
     }
 
-    .nav-links a:hover,
-    .nav-links a.active {
-      color: #e7c490;
+    .nav-links a:hover {
+      color: var(--red);
     }
+
+    .nav-vega {
+      height: 37px;
+      max-width: 110px;
+      object-fit: contain;
+    }
+
+    /* ================================
+       HERO
+    ================================= */
 
     .hero {
-      min-height: 780px;
+      min-height: 100vh;
+      padding-top: 125px;
       display: flex;
       align-items: center;
-      padding: 170px 7% 100px;
-      color: #fff;
-      background:
-        linear-gradient(
-          90deg,
-          rgba(15, 10, 7, .93) 0%,
-          rgba(15, 10, 7, .76) 34%,
-          rgba(15, 10, 7, .27) 68%,
-          rgba(15, 10, 7, .06) 100%
-        ),
-        url("BACKGROUND.PNG.png");
-
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
+      position: relative;
     }
 
-    .hero-content {
-      max-width: 630px;
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      border: 1px solid rgba(227, 24, 55, 0.07);
+      border-radius: 50%;
+      right: -170px;
+      top: 130px;
+      box-shadow:
+        0 0 0 80px rgba(227, 24, 55, 0.02),
+        0 0 0 160px rgba(227, 24, 55, 0.015);
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.06fr 0.94fr;
+      gap: 55px;
+      align-items: center;
     }
 
     .hero-tag {
       display: inline-flex;
       align-items: center;
-      gap: 9px;
-      margin-bottom: 22px;
-      color: #e1bd84;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 2.5px;
+      gap: 10px;
+
+      border: 1px solid rgba(227, 24, 55, 0.35);
+      border-radius: 100px;
+
+      padding: 9px 15px;
+      color: #ddd;
+      font-size: 12px;
+
+      background: rgba(227, 24, 55, 0.06);
+      margin-bottom: 28px;
     }
 
-    .hero-tag::before {
-      content: "";
-      width: 26px;
-      height: 1px;
-      background: #d7aa6d;
+    .live-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--red);
+      box-shadow: 0 0 12px var(--red);
     }
 
-    h1 {
-      margin: 0;
-      color: #fffdf9;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(52px, 7vw, 93px);
-      font-weight: 400;
-      line-height: .92;
-      letter-spacing: -4px;
+    .hero h1 {
+      font-size: clamp(48px, 7vw, 92px);
+      line-height: 0.98;
+      letter-spacing: -5px;
+      margin-bottom: 25px;
     }
 
-    h1 span {
-      display: block;
-      margin-top: 12px;
-      color: #d5a767;
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: .32em;
-      font-weight: 700;
-      letter-spacing: 6px;
+    .hero h1 .red {
+      color: var(--red);
     }
 
-    .hero p {
-      max-width: 490px;
-      margin: 31px 0;
-      color: rgba(255, 255, 255, .70);
-      font-size: 15px;
-      line-height: 1.8;
+    .hero h1 .thin {
+      font-weight: 300;
+      color: #8f949d;
     }
 
-    .hero-buttons {
+    .hero-description {
+      max-width: 650px;
+      font-size: 18px;
+      color: var(--muted);
+      margin-bottom: 34px;
+    }
+
+    .hero-actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
+      gap: 13px;
     }
 
     .btn {
+      min-height: 50px;
+      padding: 0 24px;
+      border-radius: 8px;
+
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-width: 170px;
-      padding: 15px 20px;
+
       border: 1px solid transparent;
-      border-radius: 7px;
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 1px;
-      text-decoration: none;
-      transition: .2s ease;
+
+      font-weight: 700;
+      font-size: 13px;
+      cursor: pointer;
+      transition: 0.25s;
     }
 
     .btn-primary {
-      color: #25180e;
-      background: linear-gradient(105deg, #e2c18c, #b48750);
+      background: var(--red);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #ff2144;
+      transform: translateY(-2px);
     }
 
     .btn-secondary {
-      border-color: rgba(255, 255, 255, .35);
-      color: #fff;
-      background: rgba(255, 255, 255, .04);
+      border-color: var(--border);
+      background: rgba(255, 255, 255, 0.025);
+      color: #ddd;
     }
 
-    .btn:hover {
-      transform: translateY(-3px);
-      filter: brightness(1.06);
+    .btn-secondary:hover {
+      border-color: rgba(227, 24, 55, 0.5);
+      color: white;
     }
 
-    .overview {
-      max-width: 1240px;
-      margin: 0 auto;
-      padding: 95px 7%;
-    }
+    /* GENERATOR VISUAL */
 
-    .section-top {
+    .hero-visual {
+      position: relative;
+      min-height: 570px;
+
       display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 30px;
-      margin-bottom: 38px;
+      align-items: center;
+      justify-content: center;
     }
 
-    .section-top span {
-      color: #927858;
-      font-size: 10px;
-      font-weight: 800;
+    .generator-glow {
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(227, 24, 55, 0.16), transparent 65%);
+      filter: blur(10px);
+    }
+
+    .generator-img {
+      width: 110%;
+      max-width: 720px;
+      position: relative;
+      z-index: 2;
+
+      object-fit: contain;
+
+      filter:
+        drop-shadow(0 35px 35px rgba(0, 0, 0, 0.65))
+        contrast(1.05);
+
+      animation: generatorFloat 5s ease-in-out infinite;
+    }
+
+    @keyframes generatorFloat {
+      0%, 100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-12px);
+      }
+    }
+
+    .hero-stat {
+      position: absolute;
+      z-index: 4;
+
+      padding: 14px 17px;
+      min-width: 145px;
+
+      background: rgba(15, 17, 21, 0.92);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+    }
+
+    .hero-stat strong {
+      font-size: 21px;
+      display: block;
+    }
+
+    .hero-stat span {
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .stat-1 {
+      top: 65px;
+      left: 0;
+    }
+
+    .stat-2 {
+      right: 0;
+      bottom: 100px;
+    }
+
+    /* ================================
+       START JOURNEY
+    ================================= */
+
+    .journey-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .journey-card {
+      position: relative;
+      min-height: 245px;
+      padding: 28px;
+
+      background: linear-gradient(
+        145deg,
+        rgba(255, 255, 255, 0.04),
+        rgba(255, 255, 255, 0.015)
+      );
+
+      border: 1px solid var(--border);
+      border-radius: 13px;
+
+      cursor: pointer;
+      overflow: hidden;
+
+      transition: 0.3s;
+    }
+
+    .journey-card::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+
+      width: 100%;
+      height: 3px;
+
+      background: var(--red);
+
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: 0.3s;
+    }
+
+    .journey-card:hover {
+      transform: translateY(-7px);
+      border-color: rgba(227, 24, 55, 0.4);
+      background: rgba(227, 24, 55, 0.045);
+    }
+
+    .journey-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .journey-number {
+      color: var(--red);
+      font-size: 12px;
       letter-spacing: 2px;
+      margin-bottom: 40px;
     }
 
-    .section-top h2 {
-      margin: 10px 0 0;
-      color: #251c15;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(32px, 4vw, 48px);
-      font-weight: 400;
-      line-height: 1;
+    .journey-card h3 {
+      font-size: 21px;
+      margin-bottom: 10px;
     }
 
-    .section-top p {
-      max-width: 330px;
-      margin: 0;
-      color: #786d62;
+    .journey-card p {
+      color: var(--muted);
       font-size: 14px;
-      line-height: 1.7;
     }
 
-    .cards {
+    .journey-arrow {
+      position: absolute;
+      right: 22px;
+      bottom: 18px;
+      font-size: 22px;
+      color: #666;
+      transition: 0.25s;
+    }
+
+    .journey-card:hover .journey-arrow {
+      color: var(--red);
+      transform: translateX(4px);
+    }
+
+    /* ================================
+       THREE PILLARS
+    ================================= */
+
+    .pillar-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .pillar {
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      padding: 40px;
+
+      background: var(--black-2);
+    }
+
+    .pillar-icon {
+      width: 55px;
+      height: 55px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 12px;
+      background: rgba(227, 24, 55, 0.1);
+      color: var(--red);
+
+      font-size: 24px;
+      margin-bottom: 28px;
+    }
+
+    .pillar h3 {
+      font-size: 28px;
+      margin-bottom: 11px;
+    }
+
+    .pillar p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* ================================
+       WORKFLOW
+    ================================= */
+
+    .workflow {
+      position: relative;
+    }
+
+    .workflow-line {
+      position: absolute;
+      left: 25px;
+      top: 20px;
+      bottom: 20px;
+      width: 1px;
+      background: linear-gradient(var(--red), rgba(227, 24, 55, 0.05));
+    }
+
+    .workflow-item {
+      position: relative;
+      display: grid;
+      grid-template-columns: 52px 1fr;
+      gap: 22px;
+      margin-bottom: 14px;
+    }
+
+    .workflow-dot {
+      width: 52px;
+      height: 52px;
+
+      border-radius: 50%;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background: #101217;
+      border: 1px solid rgba(227, 24, 55, 0.35);
+
+      color: var(--red);
+      font-size: 12px;
+      font-weight: 800;
+
+      z-index: 2;
+    }
+
+    .workflow-content {
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.018);
+
+      border-radius: 10px;
+      padding: 17px 20px;
+
+      transition: 0.25s;
+    }
+
+    .workflow-content:hover {
+      border-color: rgba(227, 24, 55, 0.4);
+      transform: translateX(5px);
+    }
+
+    .workflow-content strong {
+      display: block;
+      margin-bottom: 3px;
+    }
+
+    .workflow-content span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* ================================
+       EXPLORE
+    ================================= */
+
+    .explorer {
+      min-height: 610px;
+      position: relative;
+
+      border-radius: 18px;
+      border: 1px solid var(--border);
+
+      background:
+        radial-gradient(circle at center, rgba(227, 24, 55, 0.08), transparent 38%),
+        var(--black-2);
+
+      overflow: hidden;
+    }
+
+    .explorer-title {
+      position: absolute;
+      top: 30px;
+      left: 35px;
+      z-index: 5;
+    }
+
+    .explorer-title span {
+      display: block;
+      color: var(--red);
+      font-size: 11px;
+      letter-spacing: 3px;
+    }
+
+    .explorer-title strong {
+      font-size: 25px;
+    }
+
+    .explorer-generator {
+      position: absolute;
+
+      width: min(760px, 72vw);
+
+      left: 50%;
+      top: 54%;
+
+      transform: translate(-50%, -50%);
+      filter: drop-shadow(0 30px 35px rgba(0, 0, 0, 0.75));
+    }
+
+    .hotspot {
+      position: absolute;
+      z-index: 6;
+
+      border: 1px solid rgba(227, 24, 55, 0.6);
+      background: rgba(227, 24, 55, 0.13);
+
+      color: white;
+
+      padding: 8px 13px;
+      border-radius: 100px;
+
+      font-size: 11px;
+      cursor: pointer;
+
+      backdrop-filter: blur(8px);
+      transition: 0.25s;
+    }
+
+    .hotspot:hover {
+      background: var(--red);
+      transform: scale(1.08);
+    }
+
+    .hs1 {
+      left: 18%;
+      top: 47%;
+    }
+
+    .hs2 {
+      left: 65%;
+      top: 43%;
+    }
+
+    .hs3 {
+      left: 38%;
+      top: 65%;
+    }
+
+    .hs4 {
+      left: 73%;
+      top: 66%;
+    }
+
+    .hs5 {
+      left: 42%;
+      top: 36%;
+    }
+
+    /* ================================
+       BRAIN
+    ================================= */
+
+    .brain-box {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 20px;
+    }
+
+    .client-requirement {
+      background:
+        linear-gradient(145deg, rgba(227, 24, 55, 0.09), transparent),
+        var(--black-2);
+
+      border: 1px solid rgba(227, 24, 55, 0.25);
+      border-radius: 15px;
+
+      padding: 36px;
+    }
+
+    .client-label {
+      color: var(--red);
+      font-size: 11px;
+      letter-spacing: 3px;
+      margin-bottom: 16px;
+    }
+
+    .client-requirement h3 {
+      font-size: 35px;
+      line-height: 1.1;
+      margin-bottom: 22px;
+    }
+
+    .requirement-item {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+
+      border-top: 1px solid var(--border);
+      padding: 13px 0;
+
+      font-size: 13px;
+    }
+
+    .requirement-item span {
+      color: var(--muted);
+    }
+
+    .thinking-box {
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      padding: 30px;
+      background: #0e1014;
+    }
+
+    .thinking-box h3 {
+      margin-bottom: 24px;
+    }
+
+    .think-step {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+
+      padding: 12px 14px;
+      margin-bottom: 8px;
+
+      border-radius: 8px;
+
+      background: rgba(255, 255, 255, 0.025);
+      border: 1px solid transparent;
+
+      font-size: 13px;
+
+      transition: 0.2s;
+    }
+
+    .think-step:hover {
+      border-color: rgba(227, 24, 55, 0.25);
+      background: rgba(227, 24, 55, 0.04);
+    }
+
+    .think-step span:first-child {
+      color: var(--red);
+      font-weight: 800;
+      font-size: 11px;
+    }
+
+    /* ================================
+       TOOLBOX
+    ================================= */
+
+    .tool-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
+      gap: 13px;
     }
 
-    .card {
-      min-height: 220px;
+    .tool-card {
+      background: var(--black-2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      min-height: 135px;
+      padding: 23px;
+
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      padding: 25px;
-      border: 1px solid #ddd3c7;
-      border-radius: 12px;
-      color: #2e241c;
-      background: #faf7f2;
-      text-decoration: none;
-      transition: .25s ease;
+
+      transition: 0.25s;
     }
 
-    .card:hover {
-      transform: translateY(-6px);
-      border-color: #c69b61;
-      box-shadow: 0 18px 40px rgba(61, 39, 18, .12);
+    .tool-card:hover {
+      border-color: rgba(227, 24, 55, 0.4);
+      transform: translateY(-4px);
     }
 
-    .card-number {
-      color: #bd8d4e;
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 1.5px;
+    .tool-icon {
+      color: var(--red);
+      font-size: 19px;
     }
 
-    .card h3 {
-      margin: 25px 0 8px;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 25px;
-      font-weight: 400;
-    }
-
-    .card p {
-      margin: 0;
-      color: #84776a;
+    .tool-card strong {
       font-size: 13px;
-      line-height: 1.6;
     }
 
-    .card-arrow {
-      margin-top: 25px;
-      color: #9c7140;
-      font-size: 20px;
+    /* ================================
+       PROGRESS
+    ================================= */
+
+    .progress-layout {
+      display: grid;
+      grid-template-columns: 1fr 0.8fr;
+      gap: 50px;
     }
 
-    .footer {
-      padding: 28px 7%;
-      color: #b8a998;
-      background: #21170f;
-      font-size: 10px;
-      letter-spacing: 1.6px;
+    .skill {
+      margin-bottom: 27px;
     }
 
-    @media (max-width: 1050px) {
-      .navbar {
-        align-items: flex-start;
-      }
-
-      .nav-links {
-        max-width: 67%;
-        flex-wrap: wrap;
-        justify-content: flex-end;
-        gap: 14px;
-      }
-
-      .cards {
-        grid-template-columns: repeat(2, 1fr);
-      }
+    .skill-header {
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+      margin-bottom: 8px;
     }
 
-    @media (max-width: 700px) {
-      .navbar {
-        position: relative;
-        padding: 18px;
-        background: #1c140e;
-      }
+    .skill-header span:last-child {
+      color: var(--muted);
+    }
+
+    .bar {
+      height: 5px;
+      background: #20232a;
+      overflow: hidden;
+      border-radius: 100px;
+    }
+
+    .bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--dark-red), var(--red));
+      width: var(--progress);
+    }
+
+    .evidence-card {
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 30px;
+      background: var(--black-2);
+    }
+
+    .evidence-card h3 {
+      margin-bottom: 23px;
+    }
+
+    .evidence-item {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      padding: 11px 0;
+      color: #c5cad2;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      font-size: 13px;
+    }
+
+    .check {
+      color: var(--green);
+    }
+
+    /* ================================
+       LESSONS
+    ================================= */
+
+    .lessons-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+
+    .lesson-card {
+      background: var(--black-2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 27px;
+    }
+
+    .lesson-number {
+      color: var(--red);
+      font-size: 11px;
+      letter-spacing: 2px;
+      margin-bottom: 23px;
+    }
+
+    .lesson-card h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .lesson-card p {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* ================================
+       FINAL CTA
+    ================================= */
+
+    .final-section {
+      padding: 120px 0;
+      text-align: center;
+    }
+
+    .final-card {
+      position: relative;
+      overflow: hidden;
+
+      border: 1px solid rgba(227, 24, 55, 0.25);
+      border-radius: 20px;
+
+      padding: 85px 30px;
+
+      background:
+        radial-gradient(circle at 50% 100%, rgba(227, 24, 55, 0.15), transparent 40%),
+        #0d0f13;
+    }
+
+    .final-card h2 {
+      font-size: clamp(36px, 6vw, 70px);
+      line-height: 1;
+      letter-spacing: -3px;
+      margin-bottom: 20px;
+    }
+
+    .final-card h2 span {
+      color: var(--red);
+    }
+
+    .final-card p {
+      max-width: 650px;
+      margin: 0 auto 28px;
+      color: var(--muted);
+    }
+
+    /* ================================
+       FOOTER
+    ================================= */
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 35px 0;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--muted);
+      font-size: 11px;
+      gap: 20px;
+    }
+
+    .footer-logos {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .footer-logos img {
+      max-height: 30px;
+      max-width: 90px;
+      object-fit: contain;
+      opacity: 0.8;
+    }
+
+    /* ================================
+       MOBILE
+    ================================= */
+
+    @media (max-width: 980px) {
 
       .nav-links {
         display: none;
       }
 
-      .hero {
-        min-height: 650px;
-        padding: 100px 8% 70px;
-        background-position: 64% center;
+      .hero-grid {
+        grid-template-columns: 1fr;
       }
 
-      h1 {
+      .hero-visual {
+        min-height: 430px;
+      }
+
+      .hero h1 {
+        letter-spacing: -3px;
+      }
+
+      .journey-cards,
+      .pillar-grid,
+      .lessons-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .tool-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .brain-box,
+      .progress-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 620px) {
+
+      .section {
+        padding: 75px 0;
+      }
+
+      .brand-text {
+        display: none;
+      }
+
+      .journey-cards,
+      .pillar-grid,
+      .lessons-grid,
+      .tool-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 110px;
+      }
+
+      .hero h1 {
+        font-size: 50px;
         letter-spacing: -2px;
       }
 
-      .overview {
-        padding: 70px 7%;
+      .hero-visual {
+        min-height: 350px;
       }
 
-      .section-top {
-        display: block;
+      .generator-img {
+        width: 115%;
       }
 
-      .section-top p {
-        margin-top: 20px;
+      .hero-stat {
+        display: none;
       }
 
-      .cards {
-        grid-template-columns: 1fr;
+      .explorer {
+        min-height: 430px;
+      }
+
+      .hotspot {
+        padding: 6px 9px;
+        font-size: 9px;
+      }
+
+      .footer-content {
+        flex-direction: column;
+        text-align: center;
       }
     }
   </style>
 </head>
 
 <body>
-  <nav class="navbar">
-    <a class="brand" href="index.html">
-      <span class="brand-mark">MS</span>
-      MOHANAD SLEET
-    </a>
 
-    <ul class="nav-links">
-      <li><a href="index.html" class="active">HOME</a></li>
-      <li><a href="profile.html">ENGINEER PROFILE</a></li>
-      <li><a href="generator.html">GENERATOR</a></li>
-      <li><a href="components.html">COMPONENTS</a></li>
-      <li><a href="terms.html">TERMS</a></li>
-      <li><a href="questions.html">QUESTIONS</a></li>
-      <li><a href="about.html">ABOUT</a></li>
-      <li><a href="contact-us.html">CONTACT US</a></li>
-    </ul>
+  <!-- ==========================
+       NAVBAR
+  =========================== -->
+
+  <nav class="navbar">
+    <div class="container nav-inner">
+
+      <a href="#home" class="brand">
+        <img src="mohanad-logo.png" class="brand-logo" alt="Mohanad Logo">
+
+        <div class="brand-text">
+          <strong>MOHANAD ENGINEERING HUB</strong>
+          <span>Application Engineering Journey</span>
+        </div>
+      </a>
+
+      <div class="nav-links">
+        <a href="#start">START HERE</a>
+        <a href="#workflow">WORKFLOW</a>
+        <a href="#generator">GENERATOR</a>
+        <a href="#brain">ENGINEER'S BRAIN</a>
+        <a href="#tools">TOOLS</a>
+        <a href="#journey">MY JOURNEY</a>
+      </div>
+
+      <img src="vega-logo.png" class="nav-vega" alt="Vega Logo">
+
+    </div>
   </nav>
 
-  <section class="hero">
-    <div class="hero-content">
-      <div class="hero-tag">PRIVATE ENGINEERING PLATFORM</div>
 
-      <h1>
-        Mohanad
-        <br>Sleet
-        <span>ENGINEERING HUB</span>
-      </h1>
+  <!-- ==========================
+       HERO
+  =========================== -->
 
-      <p>
-        A personal space for engineering knowledge, technical references,
-        project experience and continuous learning.
-      </p>
+  <section class="hero" id="home">
+    <div class="container hero-grid">
 
-      <div class="hero-buttons">
-        <a href="generator.html" class="btn btn-primary">EXPLORE HUB →</a>
-        <a href="profile.html" class="btn btn-secondary">ENGINEER PROFILE</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="overview">
-    <div class="section-top">
       <div>
-        <span>EXPLORE THE HUB</span>
-        <h2>Everything in one<br>professional space.</h2>
+
+        <div class="hero-tag">
+          <span class="live-dot"></span>
+          PERSONAL APPLICATION ENGINEERING LEARNING HUB
+        </div>
+
+        <h1>
+          FROM
+          <span class="thin">ZERO</span><br>
+          TO
+          <span class="red">ENGINEER.</span>
+        </h1>
+
+        <p class="hero-description">
+          A practical engineering journey built from real learning,
+          real application work, generator systems, technical documents,
+          calculations, projects and lessons learned.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#start" class="btn btn-primary">
+            START THE JOURNEY →
+          </a>
+
+          <a href="#workflow" class="btn btn-secondary">
+            APPLICATION WORKFLOW
+          </a>
+        </div>
+
       </div>
 
-      <p>
-        Organized technical resources, systems, references and practical
-        learning tools built for real engineering work.
-      </p>
-    </div>
+      <div class="hero-visual">
 
-    <div class="cards">
-      <a class="card" href="generator.html">
-        <div>
-          <div class="card-number">01 / SYSTEMS</div>
-          <h3>Generator</h3>
-          <p>Explore the main systems, components and operating principles.</p>
-        </div>
-        <div class="card-arrow">→</div>
-      </a>
+        <div class="generator-glow"></div>
 
-      <a class="card" href="components.html">
-        <div>
-          <div class="card-number">02 / COMPONENTS</div>
-          <h3>Components</h3>
-          <p>Important equipment, parts and technical details in one place.</p>
-        </div>
-        <div class="card-arrow">→</div>
-      </a>
+        <img
+          src="generator.png"
+          alt="Diesel Generator"
+          class="generator-img"
+        >
 
-      <a class="card" href="terms.html">
-        <div>
-          <div class="card-number">03 / KNOWLEDGE</div>
-          <h3>Terms</h3>
-          <p>Clear engineering vocabulary and practical explanations.</p>
+        <div class="hero-stat stat-1">
+          <strong>LEARN</strong>
+          <span>Understand the engineering</span>
         </div>
-        <div class="card-arrow">→</div>
-      </a>
 
-      <a class="card" href="questions.html">
-        <div>
-          <div class="card-number">04 / LEARNING</div>
-          <h3>Questions</h3>
-          <p>Review, test yourself and build stronger technical knowledge.</p>
+        <div class="hero-stat stat-2">
+          <strong>APPLY</strong>
+          <span>Turn knowledge into work</span>
         </div>
-        <div class="card-arrow">→</div>
-      </a>
+
+      </div>
+
     </div>
   </section>
 
-  <footer class="footer">
-    MOHANAD SLEET · ENGINEERING HUB · PRIVATE KNOWLEDGE BASE
+
+  <!-- ==========================
+       START HERE
+  =========================== -->
+
+  <section class="section" id="start">
+    <div class="container">
+
+      <div class="eyebrow">START FROM YOUR LEVEL</div>
+
+      <h2 class="section-title">
+        Where are you in your
+        <span>journey?</span>
+      </h2>
+
+      <p class="section-description">
+        Don't search randomly. Choose your current level and follow
+        a clear engineering path from generator basics to complete
+        application engineering projects.
+      </p>
+
+      <div class="journey-cards">
+
+        <div class="journey-card">
+          <div class="journey-number">LEVEL 01</div>
+          <h3>I Know Nothing</h3>
+          <p>
+            Start with electricity, kW, kVA, voltage,
+            frequency and what a generator actually does.
+          </p>
+          <div class="journey-arrow">→</div>
+        </div>
+
+        <div class="journey-card">
+          <div class="journey-number">LEVEL 02</div>
+          <h3>Understand the Genset</h3>
+          <p>
+            Engine, alternator, radiator, controller,
+            fuel, exhaust, battery and protection.
+          </p>
+          <div class="journey-arrow">→</div>
+        </div>
+
+        <div class="journey-card">
+          <div class="journey-number">LEVEL 03</div>
+          <h3>My First RFQ</h3>
+          <p>
+            Learn how to read client requirements,
+            specifications and BOQ information.
+          </p>
+          <div class="journey-arrow">→</div>
+        </div>
+
+        <div class="journey-card">
+          <div class="journey-number">LEVEL 04</div>
+          <h3>Select the Solution</h3>
+          <p>
+            Generator rating, derating, ATS, fuel,
+            accessories and technical selection.
+          </p>
+          <div class="journey-arrow">→</div>
+        </div>
+
+        <div class="journey-card">
+          <div class="journey-number">LEVEL 05</div>
+          <h3>Prepare the Offer</h3>
+          <p>
+            Cost sheet, pricing, quotation,
+            exclusions and commercial requirements.
+          </p>
+          <div class="journey-arrow">→</div>
+        </div>
+
+        <div class="journey-card">
+          <div class="journey-number">LEVEL 06</div>
+          <h3>Manage the Project</h3>
+          <p>
+            Technical submittal, CRS, approvals,
+            FAT, delivery, installation and T&C.
+          </p>
+          <div class="journey-arrow">→</div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ==========================
+       LEARN WORK PROVE
+  =========================== -->
+
+  <section class="section">
+    <div class="container">
+
+      <div class="eyebrow">THE LEARNING SYSTEM</div>
+
+      <h2 class="section-title">
+        Don't memorize.
+        <span>Become capable.</span>
+      </h2>
+
+      <p class="section-description">
+        Every engineering topic in this platform follows three stages:
+        understand it, apply it, then prove your competency.
+      </p>
+
+      <div class="pillar-grid">
+
+        <div class="pillar">
+          <div class="pillar-icon">01</div>
+          <h3>LEARN</h3>
+          <p>
+            Understand the concept in simple engineering language.
+            Know what it is, why it exists and where it is used.
+          </p>
+        </div>
+
+        <div class="pillar">
+          <div class="pillar-icon">02</div>
+          <h3>WORK</h3>
+          <p>
+            Apply the knowledge to RFQs, datasheets, specifications,
+            calculations and real engineering decisions.
+          </p>
+        </div>
+
+        <div class="pillar">
+          <div class="pillar-icon">03</div>
+          <h3>PROVE</h3>
+          <p>
+            Record completed tasks, projects, calculations and
+            lessons learned as evidence of engineering development.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ==========================
+       APPLICATION WORKFLOW
+  =========================== -->
+
+  <section class="section" id="workflow">
+    <div class="container">
+
+      <div class="eyebrow">APPLICATION ENGINEERING</div>
+
+      <h2 class="section-title">
+        How a project moves from
+        <span>RFQ to handover.</span>
+      </h2>
+
+      <p class="section-description">
+        This is the backbone of the platform. Every step represents
+        something an Application Engineer must understand and perform.
+      </p>
+
+      <div class="workflow">
+
+        <div class="workflow-line"></div>
+
+        <div class="workflow-item">
+          <div class="workflow-dot">01</div>
+          <div class="workflow-content">
+            <strong>Receive Client RFQ</strong>
+            <span>Understand exactly what the client is requesting.</span>
+          </div>
+        </div>
+
+        <div class="workflow-item">
+          <div class="workflow-dot">02</div>
+          <div class="workflow-content">
+            <strong>Read Specification & BOQ</strong>
+            <span>Extract electrical, mechanical and project requirements.</span>
+          </div>
+        </div>
+
+        <div class="workflow-item">
+          <div class="workflow-dot">03</div>
+          <div class="workflow-content">
+            <strong>Generator Selection</strong>
+            <span>Select rating, engine, alternator, controller and configuration.</span>
+          </div>
+        </div>
+
+        <div class="workflow-item">
+          <div class="workflow-dot">04</div>
+          <div class="workflow-content">
+            <strong>Check Derating</strong>
+            <span>Ambient temperature, altitude and operating conditions.</span>
+          </div>
+        </div>
+
+        <div class="workflow-item">
+          <div class="workflow-dot">05</div>
+          <div class="workflow-content">
+            <strong>Select Accessories</strong>
+            <span>ATS, fuel system, batteries, heaters, silencers and options.</span>
+          </div>
+        </div>
+
+        <div class="workflow-item">
+          <div class="workflow-dot">06</div>
+          <div class="workflow-content">
+            <strong>Prepare Cost Sheet</strong>
+            <span>Understand project cost, margin, markup and selling price.</span>
+          </div>
+        </div>
+
+        <div class="workflow-item">
+          <div class="workflow-dot">07</div>
+          <div class="workflow-content">
+            <strong>Prepare Quotation</strong>
+            <span>Technical scope, commercial conditions and exclusions.</span>
+          </div>
+        </div>
+
+        <div class="workflow-item">
+          <div class="workflow-dot">08</div>
+          <div class="workflow-content">
+            <strong>Technical Submittal</strong>
+            <span>Datasheets, CRS, drawings, compliance and calculations.</span>
+          </div>
+        </div>
+
+        <div class="workflow-item">
+          <div class="workflow-dot">09</div>
+          <div class="workflow-content">
+            <strong>Consultant Comments</strong>
+            <span>Understand, investigate and close technical comments correctly.</span>
+          </div>
+        </div>
+
+        <div class="workflow-item">
+          <div class="workflow-dot">10</div>
+          <div class="workflow-content">
+            <strong>Approval & PO</strong>
+            <span>Move from technical approval to execution stage.</span>
+          </div>
+        </div>
+
+        <div class="workflow-item">
+          <div class="workflow-dot">11</div>
+          <div class="workflow-content">
+            <strong>FAT & Delivery</strong>
+            <span>Testing, inspection, documentation and dispatch.</span>
+          </div>
+        </div>
+
+        <div class="workflow-item">
+          <div class="workflow-dot">12</div>
+          <div class="workflow-content">
+            <strong>T&C + Handover</strong>
+            <span>Commissioning, final testing and project completion.</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ==========================
+       GENERATOR EXPLORER
+  =========================== -->
+
+  <section class="section" id="generator">
+    <div class="container">
+
+      <div class="eyebrow">INTERACTIVE LEARNING</div>
+
+      <h2 class="section-title">
+        Explore the
+        <span>generator.</span>
+      </h2>
+
+      <p class="section-description">
+        Learn each component from the perspective of an Application Engineer:
+        what it does, what specifications matter, and what must be checked.
+      </p>
+
+      <div class="explorer">
+
+        <div class="explorer-title">
+          <span>GENSET EXPLORER</span>
+          <strong>Click a System</strong>
+        </div>
+
+        <img
+          src="generator.png"
+          alt="Generator"
+          class="explorer-generator"
+        >
+
+        <button class="hotspot hs1"
+          onclick="showSystem('Engine')">
+          ENGINE
+        </button>
+
+        <button class="hotspot hs2"
+          onclick="showSystem('Alternator')">
+          ALTERNATOR
+        </button>
+
+        <button class="hotspot hs3"
+          onclick="showSystem('Fuel System')">
+          FUEL
+        </button>
+
+        <button class="hotspot hs4"
+          onclick="showSystem('Control Panel')">
+          CONTROL
+        </button>
+
+        <button class="hotspot hs5"
+          onclick="showSystem('Cooling System')">
+          COOLING
+        </button>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ==========================
+       ENGINEER BRAIN
+  =========================== -->
+
+  <section class="section" id="brain">
+    <div class="container">
+
+      <div class="eyebrow">ENGINEERING THINKING</div>
+
+      <h2 class="section-title">
+        Think like an
+        <span>Application Engineer.</span>
+      </h2>
+
+      <p class="section-description">
+        The goal is not only to know the answer.
+        The goal is to know what questions you should ask.
+      </p>
+
+      <div class="brain-box">
+
+        <div class="client-requirement">
+
+          <div class="client-label">
+            CLIENT REQUIREMENT
+          </div>
+
+          <h3>
+            1000 kVA
+            Diesel Generator
+          </h3>
+
+          <div class="requirement-item">
+            <span>Rating</span>
+            <strong>Standby</strong>
+          </div>
+
+          <div class="requirement-item">
+            <span>Voltage</span>
+            <strong>400 / 230 V</strong>
+          </div>
+
+          <div class="requirement-item">
+            <span>Frequency</span>
+            <strong>60 Hz</strong>
+          </div>
+
+          <div class="requirement-item">
+            <span>Ambient</span>
+            <strong>50°C</strong>
+          </div>
+
+          <div class="requirement-item">
+            <span>Fuel Autonomy</span>
+            <strong>8 Hours</strong>
+          </div>
+
+        </div>
+
+        <div class="thinking-box">
+
+          <h3>What should I think about?</h3>
+
+          <div class="think-step">
+            <span>01</span>
+            Is 1000 kVA required at Standby or Prime rating?
+          </div>
+
+          <div class="think-step">
+            <span>02</span>
+            Can the generator deliver this output at 50°C?
+          </div>
+
+          <div class="think-step">
+            <span>03</span>
+            What engine and alternator combination is suitable?
+          </div>
+
+          <div class="think-step">
+            <span>04</span>
+            Is the radiator suitable for the project ambient?
+          </div>
+
+          <div class="think-step">
+            <span>05</span>
+            What is the full-load fuel consumption?
+          </div>
+
+          <div class="think-step">
+            <span>06</span>
+            What tank capacity is required for 8 hours?
+          </div>
+
+          <div class="think-step">
+            <span>07</span>
+            What ATS rating and pole configuration are required?
+          </div>
+
+          <div class="think-step">
+            <span>08</span>
+            Which project standards and accessories are mandatory?
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ==========================
+       TOOLBOX
+  =========================== -->
+
+  <section class="section" id="tools">
+    <div class="container">
+
+      <div class="eyebrow">ENGINEERING TOOLBOX</div>
+
+      <h2 class="section-title">
+        Tools for
+        <span>real work.</span>
+      </h2>
+
+      <p class="section-description">
+        The platform should not only explain engineering.
+        It should help you perform engineering calculations.
+      </p>
+
+      <div class="tool-grid">
+
+        <div class="tool-card">
+          <div class="tool-icon">⚡</div>
+          <strong>kW ↔ kVA Calculator</strong>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-icon">A</div>
+          <strong>Generator Current</strong>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-icon">⛽</div>
+          <strong>Fuel Tank Sizing</strong>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-icon">ATS</div>
+          <strong>ATS Selection</strong>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-icon">°C</div>
+          <strong>Derating Check</strong>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-icon">↗</div>
+          <strong>Ventilation Calculator</strong>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-icon">%</div>
+          <strong>Margin / Markup</strong>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-icon">VAT</div>
+          <strong>VAT Calculator</strong>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ==========================
+       PROGRESS
+  =========================== -->
+
+  <section class="section" id="journey">
+    <div class="container">
+
+      <div class="eyebrow">MY ENGINEERING JOURNEY</div>
+
+      <h2 class="section-title">
+        What have I
+        <span>actually learned?</span>
+      </h2>
+
+      <p class="section-description">
+        My progress should be supported by real engineering evidence,
+        not only by percentages.
+      </p>
+
+      <div class="progress-layout">
+
+        <div>
+
+          <div class="skill">
+            <div class="skill-header">
+              <span>Generator Fundamentals</span>
+              <span>90%</span>
+            </div>
+
+            <div class="bar">
+              <div class="bar-fill"
+                   style="--progress:90%"></div>
+            </div>
+          </div>
+
+          <div class="skill">
+            <div class="skill-header">
+              <span>Engine & Alternator</span>
+              <span>75%</span>
+            </div>
+
+            <div class="bar">
+              <div class="bar-fill"
+                   style="--progress:75%"></div>
+            </div>
+          </div>
+
+          <div class="skill">
+            <div class="skill-header">
+              <span>Application Engineering</span>
+              <span>80%</span>
+            </div>
+
+            <div class="bar">
+              <div class="bar-fill"
+                   style="--progress:80%"></div>
+            </div>
+          </div>
+
+          <div class="skill">
+            <div class="skill-header">
+              <span>Technical Submittals</span>
+              <span>85%</span>
+            </div>
+
+            <div class="bar">
+              <div class="bar-fill"
+                   style="--progress:85%"></div>
+            </div>
+          </div>
+
+          <div class="skill">
+            <div class="skill-header">
+              <span>Commercial Engineering</span>
+              <span>70%</span>
+            </div>
+
+            <div class="bar">
+              <div class="bar-fill"
+                   style="--progress:70%"></div>
+            </div>
+          </div>
+
+          <div class="skill">
+            <div class="skill-header">
+              <span>Project Execution</span>
+              <span>65%</span>
+            </div>
+
+            <div class="bar">
+              <div class="bar-fill"
+                   style="--progress:65%"></div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="evidence-card">
+
+          <h3>Engineering Evidence</h3>
+
+          <div class="evidence-item">
+            <span class="check">✓</span>
+            Read generator datasheets
+          </div>
+
+          <div class="evidence-item">
+            <span class="check">✓</span>
+            Review project specifications
+          </div>
+
+          <div class="evidence-item">
+            <span class="check">✓</span>
+            Prepare RFQs
+          </div>
+
+          <div class="evidence-item">
+            <span class="check">✓</span>
+            Prepare quotations
+          </div>
+
+          <div class="evidence-item">
+            <span class="check">✓</span>
+            Prepare technical submittals
+          </div>
+
+          <div class="evidence-item">
+            <span class="check">✓</span>
+            Work with CRS & MTS
+          </div>
+
+          <div class="evidence-item">
+            <span class="check">✓</span>
+            Review consultant comments
+          </div>
+
+          <div class="evidence-item">
+            <span class="check">✓</span>
+            Understand FAT / T&C workflow
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ==========================
+       LESSONS LEARNED
+  =========================== -->
+
+  <section class="section">
+    <div class="container">
+
+      <div class="eyebrow">LESSONS LEARNED</div>
+
+      <h2 class="section-title">
+        Experience comes from
+        <span>understanding mistakes.</span>
+      </h2>
+
+      <p class="section-description">
+        Every project, comment and mistake should become
+        a permanent lesson for the next engineer.
+      </p>
+
+      <div class="lessons-grid">
+
+        <div class="lesson-card">
+          <div class="lesson-number">LESSON 001</div>
+
+          <h3>Prime vs Standby</h3>
+
+          <p>
+            Never select a generator only by looking at one kVA number.
+            Always verify the required operating rating.
+          </p>
+        </div>
+
+        <div class="lesson-card">
+          <div class="lesson-number">LESSON 002</div>
+
+          <h3>Ambient Temperature</h3>
+
+          <p>
+            A generator selection is incomplete until project
+            temperature and derating conditions are checked.
+          </p>
+        </div>
+
+        <div class="lesson-card">
+          <div class="lesson-number">LESSON 003</div>
+
+          <h3>Read the Specification</h3>
+
+          <p>
+            Small requirements such as ATS poles, noise,
+            fuel autonomy or standards can change the entire offer.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ==========================
+       FINAL
+  =========================== -->
+
+  <section class="final-section">
+    <div class="container">
+
+      <div class="final-card">
+
+        <div class="eyebrow">
+          MY GOAL
+        </div>
+
+        <h2>
+          NOT JUST KNOWLEDGE.<br>
+          <span>ENGINEERING CAPABILITY.</span>
+        </h2>
+
+        <p>
+          This platform documents my journey from my first day
+          learning generator application engineering to becoming
+          capable of understanding, selecting, preparing and supporting
+          complete generator solutions.
+        </p>
+
+        <a href="#start" class="btn btn-primary">
+          START FROM ZERO →
+        </a>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ==========================
+       FOOTER
+  =========================== -->
+
+  <footer>
+    <div class="container footer-content">
+
+      <div>
+        © 2026 MOHANAD ENGINEERING HUB
+        <br>
+        Personal Learning & Engineering Platform
+      </div>
+
+      <div class="footer-logos">
+        <img src="mohanad-logo.png" alt="Mohanad Logo">
+        <img src="vega-logo.png" alt="Vega Logo">
+      </div>
+
+      <div>
+        Not an official Vega Engineering website.
+      </div>
+
+    </div>
   </footer>
+
+
+  <!-- ==========================
+       JAVASCRIPT
+  =========================== -->
+
+  <script>
+
+    function showSystem(systemName) {
+
+      const messages = {
+
+        "Engine":
+          "ENGINE\\n\\nLearn:\\n• Engine rating\\n• Speed / RPM\\n• Fuel consumption\\n• Cooling\\n• Turbocharger\\n• Governor\\n• Emission standard",
+
+        "Alternator":
+          "ALTERNATOR\\n\\nLearn:\\n• kVA\\n• Voltage\\n• Frequency\\n• Power Factor\\n• AVR\\n• PMG\\n• IP Rating\\n• Insulation Class",
+
+        "Fuel System":
+          "FUEL SYSTEM\\n\\nLearn:\\n• Fuel consumption\\n• Day tank\\n• Bulk tank\\n• Supply line\\n• Return line\\n• Fuel pump\\n• Leak detection",
+
+        "Control Panel":
+          "CONTROL SYSTEM\\n\\nLearn:\\n• Genset controller\\n• Start / Stop\\n• AMF\\n• Alarms\\n• BMS communication\\n• Remote monitoring",
+
+        "Cooling System":
+          "COOLING SYSTEM\\n\\nLearn:\\n• Radiator\\n• Coolant\\n• Ambient temperature\\n• Air flow\\n• Ventilation\\n• Heat rejection"
+
+      };
+
+      alert(messages[systemName]);
+
+    }
+
+  </script>
+
 </body>
 </html>
